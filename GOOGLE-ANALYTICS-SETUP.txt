@@ -1,0 +1,7 @@
+ALIVE website analytics
+
+Google Analytics 4 Measurement ID: G-FCJKSENL3B
+
+Tracking added:
+- comic_open: clicks on 'Read the comic'
+- comic_pdf_open: clicks on 'Read the full comic'
