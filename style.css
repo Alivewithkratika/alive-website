@@ -254,20 +254,7 @@ footer {
 footer div { display: flex; gap: 20px; }
 .divider { opacity: .5; }
 
-@media (max-width:1050px){
-  .site-header{padding-left:5%;padding-right:5%}
-  .nav{gap:18px;font-size:13px}
-  .hero-copy{padding-left:7%;padding-right:6%}
-  .pillars{padding-left:5%;padding-right:5%}
-  .pillars article{padding-left:25px;padding-right:25px}
-  .pillar-signature{padding-left:25px}
-}
-  .nav{gap:18px;font-size:12px}
-  .hero-copy{padding-left:7%;padding-right:6%}
-  .pillars{padding-left:5%;padding-right:5%}
-  .pillars article{padding-left:25px;padding-right:25px}
-  .pillar-signature{padding-left:25px}
-}
+/*changes*/
 
 @media (max-width:760px){
   html,body{width:100%;min-width:0;overflow-x:hidden}
