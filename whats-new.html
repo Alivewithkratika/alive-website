@@ -13,30 +13,371 @@
 <style>body{margin:0;background:#f8f2eb;color:#3c2b29;font-family:Georgia,serif}header{padding:25px;display:flex;justify-content:space-between}.brand{letter-spacing:.2em;font-weight:bold}.back{font:11px Arial;letter-spacing:.12em;text-transform:uppercase;color:#756562}main{max-width:950px;margin:60px auto;padding:0 22px}.eyebrow{text-align:center;font:11px Arial;letter-spacing:.23em;text-transform:uppercase;color:#8f625e}h1{text-align:center;font-size:clamp(40px,7vw,64px);font-weight:400;margin:18px 0 55px}.post{background:#fffdf9;padding:30px;margin-bottom:22px;border:1px solid #ded1c7}.date{font:10px Arial;letter-spacing:.15em;color:#b9827d;text-transform:uppercase}.post h2{font-size:28px;font-weight:400;margin:12px 0}.post p{color:#756562;font-size:16px;line-height:1.7}</style>
 </head>
 <body><header><a class="brand" href="index.html">ALIVE</a><a class="back" href="index.html">Back to website</a></header>
-<main style="max-width:760px;margin:70px auto 100px;padding:0 8%;">
-  <div class="eyebrow">NEW FROM ALIVE</div>
+<main class="meow-news">
 
-  <h1 style="text-align:left;margin:18px 0 25px;">
-    Something new just came alive.
-  </h1>
+  <section class="news-hero">
 
-  <p style="font-size:18px;line-height:1.8;">
-    I've created something I've been wanting to share with you for a while —
-    <em>The Dopamine Monster</em>, my first comic for ALIVE.
-  </p>
+    <div class="news-top">
+      <span>ALIVE</span>
+      <small>FROM SURVIVING TO LIVING</small>
+    </div>
 
-  <p style="font-size:18px;line-height:1.8;">
-    And because every beginning deserves something special, I'm giving it to
-    you as a <strong>FREE Welcome Gift</strong>.
-  </p>
+    <div class="breaking">Breaking<br>Meows! ♡</div>
 
-  <p style="font-family:Allura,cursive;font-size:34px;color:#9b5f50;margin:35px 0;">
-    Meet the Monster.
-  </p>
+    <div class="meow-title">
+      <span>Ms Meownalisa</span>
+      <strong>Chief Meow-senger<br>(at ALIVE)</strong>
+    </div>
 
-  <a href="dopamine-monster"
-     style="display:inline-block;padding:15px 24px;background:#8f5144;color:white;text-decoration:none;letter-spacing:.12em;font-size:11px;">
-    MEET THE MONSTER →
-  </a>
+    <div class="cat-wrap">
+      <img src="meownalisa-1.jpg" alt="Ms Meownalisa">
+    </div>
+
+    <div class="newspaper">
+      <div class="paper-name">The Daily Meow 🐾</div>
+
+      <h1>Our Official Website<br>is Now Live!</h1>
+
+      <p>
+        A space to pause, reflect<br>
+        and create a life<br>
+        that feels more you.
+      </p>
+
+      <div class="paper-line"></div>
+
+      <p>From Surviving<br>to Living.</p>
+    </div>
+
+    <div class="comic">
+      <img src="dopamine-cover-web.jpg"
+           alt="The Dopamine Monster comic">
+
+      <div class="comic-text">
+        <strong>A COMIC BY<br>KRATIKA SONGARA</strong>
+      </div>
+    </div>
+
+    <div class="gift-note">
+      To celebrate<br>
+      our website launch,<br>
+      here's a special gift for you —<br>
+      my first comic<br>
+      <em>The Dopamine Monster!</em><br>
+      It's <strong>FREE!</strong> ♡
+    </div>
+
+    <div class="today">
+      <strong>Today's News:</strong>
+      <p>☑ Our website is live!</p>
+      <p>☑ A special gift<br>for you!</p>
+    </div>
+
+    <a href="dopamine-monster" class="free-comic">
+      GET YOUR FREE COMIC →
+    </a>
+
+    <div class="signature">
+      KRATIKA SONGARA<br>
+      <small>LIFE COACH</small>
+    </div>
+
+    <div class="meow-sign">
+      With love,<br>
+      <strong>Ms Meownalisa</strong> 🐾
+    </div>
+
+  </section>
+
 </main>
-</body></html>
+
+<style>
+
+.meow-news{
+  background:#f7eee6;
+  color:#382622;
+  min-height:100vh;
+  padding:0;
+}
+
+.news-hero{
+  max-width:900px;
+  margin:auto;
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:45px 7% 80px;
+  background:
+    radial-gradient(circle at 15% 35%,rgba(255,255,255,.65),transparent 28%),
+    radial-gradient(circle at 90% 70%,rgba(255,255,255,.45),transparent 30%);
+}
+
+.news-top{
+  text-align:left;
+  letter-spacing:.35em;
+  color:#74483d;
+}
+
+.news-top span{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:32px;
+  letter-spacing:.38em;
+}
+
+.news-top small{
+  display:block;
+  margin-top:8px;
+  font-size:9px;
+  letter-spacing:.35em;
+}
+
+.breaking{
+  position:absolute;
+  right:6%;
+  top:55px;
+  font-family:cursive;
+  font-size:34px;
+  line-height:1;
+  text-align:center;
+  transform:rotate(-5deg);
+}
+
+.meow-title{
+  position:absolute;
+  left:6%;
+  top:180px;
+  font-family:cursive;
+  transform:rotate(-5deg);
+}
+
+.meow-title span{
+  display:block;
+  font-size:28px;
+}
+
+.meow-title strong{
+  display:block;
+  margin-top:10px;
+  font-size:17px;
+  font-weight:400;
+}
+
+.cat-wrap{
+  width:55%;
+  max-width:480px;
+  margin:90px auto 0;
+  position:relative;
+  z-index:2;
+}
+
+.cat-wrap img{
+  width:100%;
+  display:block;
+  border-radius:50% 50% 8px 8px;
+}
+
+.newspaper{
+  position:relative;
+  z-index:3;
+  width:58%;
+  margin:-30px 0 0 4%;
+  padding:24px 25px;
+  background:#f3e6d9;
+  box-shadow:0 8px 20px rgba(70,40,30,.12);
+  transform:rotate(-2deg);
+  text-align:center;
+}
+
+.paper-name{
+  font-family:Georgia,serif;
+  font-size:17px;
+  letter-spacing:.12em;
+  border-bottom:1px solid #8a665b;
+  padding-bottom:8px;
+}
+
+.newspaper h1{
+  font-family:Georgia,serif;
+  font-size:35px;
+  line-height:1.05;
+  margin:20px 0;
+}
+
+.newspaper p{
+  font-family:Georgia,serif;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.paper-line{
+  width:50px;
+  height:1px;
+  background:#8a665b;
+  margin:18px auto;
+}
+
+.comic{
+  position:absolute;
+  right:5%;
+  top:590px;
+  width:34%;
+  z-index:4;
+  transform:rotate(4deg);
+}
+
+.comic img{
+  width:100%;
+  display:block;
+  box-shadow:5px 8px 18px rgba(50,30,20,.18);
+}
+
+.comic-text{
+  background:#f3e6d9;
+  text-align:center;
+  padding:10px;
+  font-size:9px;
+  letter-spacing:.08em;
+}
+
+.gift-note{
+  position:absolute;
+  right:4%;
+  top:940px;
+  width:32%;
+  font-family:cursive;
+  font-size:18px;
+  line-height:1.45;
+  transform:rotate(2deg);
+}
+
+.today{
+  width:35%;
+  margin:70px 0 0 0;
+  padding:20px;
+  font-family:cursive;
+  font-size:18px;
+  line-height:1.4;
+  background:#f0e4d7;
+  transform:rotate(-3deg);
+}
+
+.today strong{
+  font-size:23px;
+}
+
+.today p{
+  margin:12px 0;
+}
+
+.free-comic{
+  display:block;
+  width:max-content;
+  margin:55px auto 30px;
+  padding:17px 34px;
+  background:#673a2f;
+  color:white;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.17em;
+  border-radius:30px;
+}
+
+.signature{
+  text-align:center;
+  font-size:11px;
+  letter-spacing:.3em;
+  margin-top:35px;
+}
+
+.signature small{
+  font-size:9px;
+  letter-spacing:.35em;
+}
+
+.meow-sign{
+  position:absolute;
+  right:6%;
+  bottom:35px;
+  font-family:cursive;
+  font-size:17px;
+  transform:rotate(-5deg);
+}
+
+@media(max-width:600px){
+
+  .news-hero{
+    padding:30px 6% 70px;
+  }
+
+  .news-top span{
+    font-size:25px;
+  }
+
+  .breaking{
+    position:relative;
+    top:auto;
+    right:auto;
+    margin:25px 0 0 auto;
+    width:max-content;
+    font-size:27px;
+  }
+
+  .meow-title{
+    position:relative;
+    left:auto;
+    top:auto;
+    margin:20px 0 -20px;
+  }
+
+  .cat-wrap{
+    width:82%;
+    margin:45px auto 0;
+  }
+
+  .newspaper{
+    width:82%;
+    margin:-20px auto 0;
+    padding:20px;
+  }
+
+  .newspaper h1{
+    font-size:28px;
+  }
+
+  .comic{
+    position:relative;
+    top:auto;
+    right:auto;
+    width:62%;
+    margin:35px 3% 0 auto;
+  }
+
+  .gift-note{
+    position:relative;
+    top:auto;
+    right:auto;
+    width:78%;
+    margin:30px auto;
+    font-size:18px;
+  }
+
+  .today{
+    width:78%;
+    margin:30px auto;
+  }
+
+  .free-comic{
+    margin-top:45px;
+  }
+
+  .meow-sign{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    text-align:right;
+    margin-top:35px;
+  }
+}
+
+</style>
