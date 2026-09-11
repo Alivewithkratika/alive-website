@@ -375,3 +375,28 @@ footer div { display: flex; gap: 20px; }
 @media (max-width:760px) {
   .site-header .nav a { font-size: 13px; }
 }
+/* MOVING WHAT'S NEW TICKER */
+.alive-news-ticker{
+  width:100%;
+  overflow:hidden;
+  background:#f8efe8;
+  border-top:1px solid rgba(111,61,49,.12);
+  border-bottom:1px solid rgba(111,61,49,.12);
+  padding:14px 0;
+  white-space:nowrap;
+}
+
+.alive-news-ticker a{
+  display:inline-block;
+  color:#6f3d31;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-decoration:none;
+  padding-left:100%;
+  animation:aliveTicker 14s linear infinite;
+}
+
+@keyframes aliveTicker{
+  from{transform:translateX(0);}
+  to{transform:translateX(-100%);}
+}
