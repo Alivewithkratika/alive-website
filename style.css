@@ -400,3 +400,52 @@ footer div { display: flex; gap: 20px; }
   from{transform:translateX(0);}
   to{transform:translateX(-100%);}
 }
+
+/* WHAT'S NEW — MEOWNALISA */
+.whats-new-page{
+  max-width:1100px;
+  margin:50px auto 80px;
+  padding:0 5%;
+  text-align:center;
+}
+
+.news-image-link{
+  display:block;
+  text-decoration:none;
+}
+
+.news-image-link img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:4px;
+}
+
+.free-comic-button{
+  display:inline-block;
+  margin:28px auto 10px;
+  padding:16px 30px;
+  background:#8f5144;
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:.14em;
+  font-weight:600;
+  transition:transform .2s ease;
+}
+
+.free-comic-button:hover{
+  transform:translateY(-2px);
+}
+
+@media(max-width:600px){
+  .whats-new-page{
+    margin:30px auto 60px;
+    padding:0 4%;
+  }
+
+  .free-comic-button{
+    width:90%;
+    box-sizing:border-box;
+  }
+}
