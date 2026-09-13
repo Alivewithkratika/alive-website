@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ALIVE with Kratika Songara</title>
+  <meta name="description" content="Meet Kratika Songara, founder of ALIVE, and discover why ALIVE exists.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+.about-hero,.about-story{display:grid;grid-template-columns:46% 54%;min-height:650px;background:var(--cream)}
+.about-hero-copy{padding:105px 9% 85px;display:flex;flex-direction:column;justify-content:center}
+.about-hero-copy h1,.about-story-copy h2,.about-philosophy h2,.about-closing h2{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:.95}
+.about-hero-copy h1{font-size:clamp(54px,6vw,88px);margin:0 0 30px}.about-hero-copy h1 em,.about-philosophy h2 em,.about-closing h2 em{color:var(--rose-dark);font-style:italic}
+.about-hero-copy p,.about-story-copy p{max-width:600px;font-size:16px;line-height:1.9;margin:0 0 18px}
+.about-hero-image,.about-story-image{overflow:hidden}.about-hero-image img{width:100%;height:100%;min-height:650px;object-fit:cover;display:block}
+.about-hero-script{font-family:"Allura",cursive;color:var(--rose-dark);font-size:34px;margin-top:20px}
+.about-story{grid-template-columns:50% 50%;background:var(--cream-2)}.about-story-image img{width:100%;height:100%;min-height:610px;object-fit:cover;display:block}
+.about-story-copy{padding:90px 10%;display:flex;flex-direction:column;justify-content:center}.about-story-copy h2{font-size:clamp(46px,5vw,72px);margin:0 0 28px}
+.about-philosophy{padding:100px 10%;text-align:center;background:var(--cream)}.about-philosophy h2{font-size:clamp(48px,6vw,82px);max-width:950px;margin:0 auto 55px}
+.about-beliefs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left}.about-beliefs article{padding:38px 30px;border-right:1px solid var(--line)}.about-beliefs article:last-child{border-right:0}
+.about-beliefs span{color:var(--rose);font-size:11px;letter-spacing:.15em}.about-beliefs h3{font-family:"Cormorant Garamond",serif;font-size:29px;font-weight:500;margin:12px 0 10px}.about-beliefs p{font-size:14px;line-height:1.7;margin:0}
+.about-quote{padding:85px 10%;text-align:center;background:#eadbd3}.about-quote p{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4vw,55px);line-height:1.05;font-style:italic;margin:0 auto 18px;max-width:900px}.about-quote span{font-size:11px;letter-spacing:.2em}
+.about-closing{padding:95px 8%;text-align:center;background:var(--rose-dark);color:var(--white)}.about-closing h2{font-size:clamp(48px,6vw,78px);margin:0 0 32px}.about-closing .eyebrow{color:#f2d8ce}
+@media(max-width:760px){.about-hero,.about-story{display:flex;flex-direction:column}.about-hero-copy{order:2;padding:68px 8% 72px}.about-hero-image{order:1}.about-hero-image img{min-height:420px;height:420px}.about-hero-copy h1{font-size:52px}.about-hero-copy p,.about-story-copy p{font-size:15px;line-height:1.85}.about-story-image img{min-height:430px;height:430px}.about-story-copy{padding:70px 8%}.about-story-copy h2{font-size:49px}.about-philosophy{padding:75px 8%}.about-philosophy h2{font-size:48px;margin-bottom:40px}.about-beliefs{display:block}.about-beliefs article{border-right:0;border-bottom:1px solid var(--line);padding:28px 8%}.about-beliefs article:last-child{border-bottom:0}.about-quote{padding:70px 8%}.about-closing{padding:75px 8%}}
+</style>
+  <style>
+    .about-page-hero {
+      padding: 110px 10% 90px;
+      background: var(--cream);
+      text-align: center;
+    }
+    .about-page-hero .eyebrow { margin-bottom: 18px; }
+    .about-page-hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 105px);
+      font-weight: 500;
+      line-height: .9;
+      margin: 0;
+    }
+    .about-page-hero h1 span {
+      color: var(--rose-dark);
+      font-style: italic;
+    }
+    .about-page-content {
+      padding: 95px 10%;
+      background: var(--cream-2);
+      display: grid;
+      grid-template-columns: 25% 1fr;
+      gap: 8%;
+    }
+    .about-page-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: var(--rose-dark);
+      padding-top: 10px;
+    }
+    .about-page-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(45px, 5vw, 72px);
+      font-weight: 500;
+      line-height: .95;
+      margin: 0 0 8px;
+    }
+    .about-page-content .script {
+      margin-bottom: 28px;
+    }
+    .about-page-content p {
+      max-width: 700px;
+      font-size: 16px;
+      line-height: 1.9;
+      margin: 0 0 20px;
+    }
+    .about-page-signoff {
+      margin-top: 42px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1.45;
+    }
+    .about-page-signoff strong {
+      font-weight: 500;
+    }
+    .about-page-cta {
+      padding: 90px 8%;
+      background: #e9d8cf;
+      text-align: center;
+    }
+    .about-page-cta h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: 500;
+      line-height: 1;
+      margin: 0 0 30px;
+    }
+    @media (max-width:760px) {
+      .about-page-hero { padding: 78px 8% 65px; }
+      .about-page-content {
+        display: block;
+        padding: 70px 8%;
+      }
+      .about-page-label { margin-bottom: 25px; }
+      .about-page-content h2 { font-size: 49px; }
+      .about-page-content p { font-size: 15px; line-height: 1.85; }
+      .about-page-cta { padding: 75px 8%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="ALIVE home">
+      <span class="brand-name">ALIVE</span>
+      <span class="brand-sub">COACHING WITH</span>
+      <span class="brand-script">Kratika Songara</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+    <nav class="nav">
+      <a href="about">ABOUT</a>
+      <a href="feedback">FEEDBACK</a>
+      <a href="creations">CREATIONS</a>
+      <a href="whats-new">WHAT’S NEW</a>
+      <a href="offer">OFFERS</a>
+      <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-page-hero">
+      <p class="eyebrow">MEET KRATIKA</p>
+      <h1>The person<br>behind <span>ALIVE.</span></h1>
+    </section>
+
+    <section class="about-page-content">
+      <div class="about-page-label">WHY ALIVE EXISTS</div>
+
+      <div>
+        <h2>Somewhere along the way, we can lose touch with ourselves.</h2>
+        <p class="script">You are not broken.</p>
+
+        <p>
+          Somewhere between growing up and becoming who we were expected to be,
+          many of us stop asking what actually makes us feel alive.
+        </p>
+
+        <p>
+          We become responsible. We achieve. We keep going.
+          And somewhere along the way, we can lose touch with ourselves.
+        </p>
+
+        <p>
+          I’m Kratika.
+        </p>
+
+        <p>
+          I created ALIVE because I believe life is meant to be more than simply
+          getting through it.
+        </p>
+
+        <p>
+          My work is about helping people pause, understand themselves,
+          reconnect with their energy, explore what genuinely matters to them,
+          and create a life that feels more like their own.
+        </p>
+
+        <p>
+          Not a perfect life.<br>
+          Not someone else’s version of success.<br>
+          A life that leaves you feeling <em>fulfilled.</em>
+        </p>
+
+        <div class="about-page-signoff">
+          <strong>From surviving to living.</strong><br>
+          Kratika Songara · Life Coach · Founder, ALIVE
+        </div>
+      </div>
+    </section>
+
+    <section class="about-page-cta">
+      <h2>Ready to feel<br>more alive?</h2>
+      <a class="button light" href="begin">LET’S TALK <span>→</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© ALIVE WITH KRATIKA SONGARA</span>
+    <div>
+      <a href="#" aria-label="Instagram">INSTAGRAM</a>
+      <span class="divider">|</span>
+      <a href="mailto:hello@alivewithkratika.com">EMAIL</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
