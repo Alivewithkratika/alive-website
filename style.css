@@ -486,7 +486,7 @@ footer div { display: flex; gap: 20px; }
 }
 
 .about-hero h1 {
-  font-family: inherit;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(64px, 7vw, 108px);
   line-height: 0.9;
   font-weight: 400;
