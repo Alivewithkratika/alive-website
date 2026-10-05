@@ -489,8 +489,8 @@ footer div { display: flex; gap: 20px; }
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(64px, 7vw, 108px);
   line-height: 0.9;
-  font-weight: 400;
-  letter-spacing: -0.045em;
+  font-weight: 500;
+  letter-spacing: -0.025em;
   margin: 0;
 }
 
@@ -526,9 +526,10 @@ footer div { display: flex; gap: 20px; }
 }
 
 .about-section h2 {
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(32px, 4vw, 48px);
   line-height: 1.05;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.025em;
   margin: 0 0 30px;
 }
@@ -581,9 +582,10 @@ footer div { display: flex; gap: 20px; }
 }
 
 .reminder-title h2 {
+  font-family: "Cormorant Garamond", serif;
   font-size: 38px;
   line-height: 1.05;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -607,8 +609,9 @@ footer div { display: flex; gap: 20px; }
 }
 
 .about-closing h2 {
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(38px, 5vw, 58px);
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   letter-spacing: -0.035em;
 }
