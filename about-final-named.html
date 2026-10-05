@@ -1,450 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — ALIVE with Kratika Songara</title>
-  <meta name="description" content="The story and philosophy behind ALIVE with Kratika Songara.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<!-- =========================
+     ABOUT PAGE
+========================= -->
 
-  <style>
-    /* ABOUT PAGE — editorial layout matching the reference */
-    .about-editorial { background: #f8f1eb; color: #30231f; }
+<main class="about-page">
 
-    .about-intro {
-      min-height: 360px;
-      padding: 95px 7% 75px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .about-intro .eyebrow {
-      margin-bottom: 28px;
-      font-size: 14px;
-      letter-spacing: .24em;
-    }
-    .about-intro h1 {
-      margin: 0;
-      max-width: 1050px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(64px, 7vw, 108px);
-      line-height: .88;
-      font-weight: 500;
-    }
-    .about-intro h1 em {
-      color: #9a6557;
-      font-style: italic;
-    }
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="about-hero-content">
 
-    .about-feature {
-      display: grid;
-      grid-template-columns: 42% 58%;
-      min-height: 600px;
-    }
-    .about-feature-copy {
-      padding: 72px 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #f8f1eb;
-    }
-    .about-feature-copy .eyebrow,
-    .about-story-copy .eyebrow {
-      font-size: 13px;
-      letter-spacing: .25em;
-      margin-bottom: 25px;
-    }
-    .about-feature-copy h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 5vw, 76px);
-      line-height: .93;
-      font-weight: 500;
-      margin: 0 0 30px;
-    }
-    .about-feature-copy h2 em {
-      font-style: italic;
-    }
-    .about-feature-copy p,
-    .about-story-copy p {
-      font-size: clamp(17px, 1.35vw, 20px);
-      line-height: 1.7;
-      margin: 0 0 22px;
-      max-width: 610px;
-    }
-    .about-feature-image {
-      min-height: 600px;
-      overflow: hidden;
-    }
-    .about-feature-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-    .about-hand {
-      font-family: "Allura", cursive;
-      color: #9a6557;
-      font-size: clamp(32px, 3vw, 48px);
-      line-height: 1.05;
-      margin-top: 12px;
-    }
+      <p class="about-eyebrow">ABOUT</p>
 
-    .about-story {
-      display: grid;
-      grid-template-columns: 58% 42%;
-      min-height: 600px;
-    }
-    .about-story-image {
-      min-height: 600px;
-      overflow: hidden;
-      order: 1;
-    }
-    .about-story-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-    .about-story-copy {
-      order: 2;
-      padding: 72px 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #f8f1eb;
-    }
-    .about-story-copy h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(46px, 4.4vw, 68px);
-      line-height: .94;
-      font-weight: 500;
-      margin: 0 0 28px;
-    }
-    .about-story-copy h2 em {
-      color: #9a6557;
-      font-style: italic;
-    }
+      <h1>
+        Hi, I am<br>
+        Kratika.
+      </h1>
 
-    .about-values {
-      padding: 72px 6% 78px;
-      background: #f8f1eb;
-      text-align: center;
-    }
-    .about-values > .eyebrow {
-      font-size: 14px;
-      letter-spacing: .28em;
-      margin-bottom: 45px;
-    }
-    .about-value-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid #d7c5ba;
-      border-bottom: 1px solid #d7c5ba;
-    }
-    .about-value {
-      padding: 38px 28px 42px;
-      border-right: 1px solid #d7c5ba;
-    }
-    .about-value:last-child { border-right: 0; }
-    .about-value h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 29px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      margin: 16px 0 12px;
-    }
-    .about-value p {
-      font-size: 16px;
-      line-height: 1.65;
-      margin: 0 auto;
-      max-width: 220px;
-    }
-    .about-value-number {
-      font-size: 12px;
-      letter-spacing: .18em;
-      color: #9a6557;
-    }
+      <p class="about-intro">
+        The story behind ALIVE — and why I believe
+        there is more life inside all of us.
+      </p>
 
-    .about-quote {
-      min-height: 300px;
-      padding: 78px 8%;
-      background: #eadbd3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .about-quote p {
-      max-width: 1050px;
-      margin: 0 0 20px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(38px, 4.2vw, 64px);
-      line-height: 1;
-      font-style: italic;
-    }
-    .about-quote span {
-      font-size: 12px;
-      letter-spacing: .2em;
-    }
+    </div>
 
-    .about-close {
-      padding: 90px 8%;
-      text-align: center;
-      background: #f8f1eb;
-    }
-    .about-close h2 {
-      max-width: 1000px;
-      margin: 0 auto 38px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 5.6vw, 82px);
-      line-height: .92;
-      font-weight: 500;
-    }
-    .about-close h2 em {
-      color: #9a6557;
-      font-style: italic;
-    }
-
-    @media (max-width: 800px) {
-      .about-intro {
-        min-height: 430px;
-        padding: 75px 8% 65px;
-      }
-      .about-intro h1 {
-        font-size: clamp(54px, 14vw, 76px);
-        line-height: .9;
-      }
-      .about-intro .eyebrow,
-      .about-feature-copy .eyebrow,
-      .about-story-copy .eyebrow,
-      .about-values > .eyebrow {
-        font-size: 12px;
-      }
-
-      .about-feature,
-      .about-story {
-        display: flex;
-        flex-direction: column;
-      }
-      .about-feature-image {
-        order: 1;
-        min-height: 390px;
-        height: 390px;
-      }
-      .about-feature-copy {
-        order: 2;
-        padding: 65px 8% 72px;
-      }
-      .about-feature-copy h2 {
-        font-size: clamp(48px, 13vw, 68px);
-      }
-      .about-feature-copy p,
-      .about-story-copy p {
-        font-size: 18px;
-        line-height: 1.75;
-      }
-
-      .about-story-image {
-        order: 1;
-        min-height: 390px;
-        height: 390px;
-      }
-      .about-story-copy {
-        order: 2;
-        padding: 65px 8% 72px;
-      }
-      .about-story-copy h2 {
-        font-size: clamp(46px, 12vw, 65px);
-      }
-
-      .about-values {
-        padding: 70px 8%;
-      }
-      .about-value-grid {
-        display: block;
-      }
-      .about-value {
-        border-right: 0;
-        border-bottom: 1px solid #d7c5ba;
-        padding: 32px 12px 36px;
-      }
-      .about-value:last-child { border-bottom: 0; }
-      .about-value h3 { font-size: 30px; }
-      .about-value p {
-        font-size: 17px;
-        max-width: 300px;
-      }
-
-      .about-quote {
-        min-height: 280px;
-        padding: 65px 8%;
-      }
-      .about-quote p {
-        font-size: clamp(36px, 10vw, 52px);
-      }
-
-      .about-close {
-        padding: 75px 8%;
-      }
-      .about-close h2 {
-        font-size: clamp(48px, 12vw, 68px);
-      }
-    }
-  </style>
-</head>
-
-<body>
-<header class="site-header">
-  <a href="index.html" class="brand" aria-label="ALIVE home">
-    <span class="brand-name">ALIVE</span>
-    <span class="brand-sub">COACHING WITH</span>
-    <span class="brand-script">Kratika Songara</span>
-  </a>
-  <button class="menu-toggle" aria-label="Open menu">☰</button>
-  <nav class="nav">
-    <a href="about">ABOUT</a>
-    <a href="feedback">FEEDBACK</a>
-    <a href="creations">CREATIONS</a>
-    <a href="whats-new">WHAT’S NEW</a>
-    <a href="offer">OFFERS</a>
-    <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
-  </nav>
-</header>
-
-<main class="about-editorial">
-
-  <section class="about-intro">
-    <div>
-      <p class="eyebrow">MEET KRATIKA</p>
-      <h1>The person behind <em>ALIVE.</em></h1>
+    <div class="about-hero-image">
+      <img
+        src="assets/kratika-about.jpg"
+        alt="Kratika, founder of ALIVE"
+      >
     </div>
   </section>
 
-  <section class="about-feature">
-    <div class="about-feature-copy">
-      <p class="eyebrow">MY STORY</p>
-      <h2>I didn’t just find a better life.<br>I found <em>myself.</em></h2>
 
-      <p>
-        At some point, life became less about <em>what I want</em> and more about
-        <em>what I should do.</em>
-      </p>
-      <p>
-        Study. Work. Achieve. Be responsible. Make everyone proud. Keep going.
-      </p>
-      <p>
-        And you did.
-      </p>
-      <p>
-        Maybe you wake up, do what needs to be done, come home, scroll, sleep…
-        and do it all again.
-      </p>
-      <p>
-        Nothing is terribly wrong. And yet, something doesn’t feel right.
-      </p>
-      <div class="about-hand">Maybe something in you is asking for more.</div>
-    </div>
+  <!-- MY STORY -->
+  <section class="about-section about-story">
 
-    <div class="about-feature-image">
-      <img src="sky.jpg" alt="Kratika walking by the sea at sunset">
-    </div>
+    <h2>Exploring myself. Understanding life.</h2>
+
+    <p>
+      A few years ago, I wrote something that quietly changed my life.
+    </p>
+
+    <blockquote>
+      “Exploring myself. Understanding life.”
+    </blockquote>
+
+    <p>
+      At the time, I didn't know those words would become the beginning
+      of everything.
+    </p>
+
+    <p>
+      I was overworking. Always doing more. Yet somehow, feeling less.
+    </p>
+
+    <p>
+      I was losing my creativity. Feeling drained. Feeling like I didn't
+      quite fit into the life I was building.
+    </p>
+
+    <p>
+      So I stopped searching for the next achievement...
+      and started searching for myself.
+    </p>
+
   </section>
 
-  <section class="about-story">
-    <div class="about-story-image">
-      <img src="mountain.jpg" alt="Kratika connecting with an animal in the mountains">
-    </div>
 
-    <div class="about-story-copy">
-      <p class="eyebrow">THE FEELING BEHIND ALIVE</p>
-      <h2>You stopped asking yourself — <em>“Am I actually happy?”</em></h2>
+  <!-- WHY ALIVE -->
+  <section class="about-section">
 
-      <p>
-        You miss a version of yourself you can’t quite explain.
-        The one who laughed without thinking. Who got excited about little things.
-        Who wanted to explore. Who had ideas, dreams, curiosity.
-      </p>
+    <h2>Why ALIVE exists</h2>
 
-      <p>
-        Maybe you don’t need a completely new life.
-        <strong>Maybe you need to find yourself inside the life you already have.</strong>
-      </p>
+    <p>
+      ALIVE is for people who may be functioning perfectly well on the
+      outside, but inside feel drained, disconnected, stuck or are living
+      life like a routine.
+    </p>
 
-      <p>
-        I created ALIVE because I believe life is meant to be more than simply
-        getting through it.
-      </p>
+    <p>
+      People who have lost touch with what excites them.
+      People who are burdened by expectations and the pressure of social image.
+    </p>
 
-      <p>
-        I want to help people pause, reconnect with their energy, discover what
-        they’re naturally good at, explore what genuinely matters to them,
-        and create a life that feels like their own.
-      </p>
-    </div>
+    <p>
+      ALIVE is about helping you reconnect with yourself, your energy,
+      your strengths, your creativity and your human potential —
+      and create a life that feels more intentional, authentic and fulfilling.
+    </p>
+
   </section>
 
-  <section class="about-values">
-    <p class="eyebrow">AT ALIVE, WE FOCUS ON</p>
 
-    <div class="about-value-grid">
-      <article class="about-value">
-        <span class="about-value-number">01</span>
-        <h3>CLARITY</h3>
-        <p>Understand yourself deeper.</p>
-      </article>
-      <article class="about-value">
-        <span class="about-value-number">02</span>
-        <h3>AUTHENTICITY</h3>
-        <p>Reconnect with what lights you up.</p>
-      </article>
-      <article class="about-value">
-        <span class="about-value-number">03</span>
-        <h3>ACTION</h3>
-        <p>Turn insights into real change.</p>
-      </article>
-      <article class="about-value">
-        <span class="about-value-number">04</span>
-        <h3>FULFILMENT</h3>
-        <p>Create a life that feels expansive and truly yours.</p>
-      </article>
+  <!-- AS A COACH -->
+  <section class="about-section">
+
+    <h2>As a coach</h2>
+
+    <p>
+      I'm a good listener. I notice things. I love bringing happiness
+      and energy into people who may have forgotten what that feels like.
+    </p>
+
+    <p>
+      I don't want to tell you who to become.
+      I want to help you discover who you already are.
+    </p>
+
+    <p>
+      As a Life Coach, my role is to create the space for your exploration,
+      to help you question what no longer fits, to help you reconnect
+      with yourself, and to help you bring more life into your life.
+    </p>
+
+  </section>
+
+
+  <!-- STILL LEARNING -->
+  <section class="about-section">
+
+    <h2>And yes, I'm still figuring it out too.</h2>
+
+    <p>
+      I don't believe the journey of understanding yourself ever really ends.
+    </p>
+
+    <p>
+      I'm still learning.<br>
+      I'm still exploring.
+    </p>
+
+    <p>
+      And that's exactly why this work feels so meaningful to me.
+    </p>
+
+  </section>
+
+
+  <!-- GENTLE REMINDER -->
+  <section class="about-reminder">
+
+    <div class="reminder-title">
+      <h2>A gentle<br>reminder</h2>
     </div>
+
+    <div class="reminder-text">
+
+      <p>
+        When something feels heavy, it's natural to spend time with it.
+        Just don't stay there for too long.
+      </p>
+
+      <p>
+        Give it the right attention, understand it, do what you can,
+        and then let yourself move forward peacefully.
+        Your days and years are precious.
+      </p>
+
+      <p>
+        You deserve to feel lighter, and there is always a next step.
+      </p>
+
+    </div>
+
   </section>
 
-  <section class="about-quote">
-    <p>“I don’t believe your purpose is to become someone impressive. I believe it’s to become more fully you.”</p>
-    <span>— KRATIKA SONGARA</span>
-  </section>
 
-  <section class="about-close">
-    <h2>Not perfect.<br>Not someone else’s version of success.<br>But <em>a life that feels like yours.</em></h2>
-    <a class="button" href="begin">LET’S CONNECT <span>→</span></a>
+  <!-- CLOSING -->
+  <section class="about-closing">
+
+    <h2>Welcome to ALIVE.</h2>
+
+    <p>From Surviving to Living.</p>
+
+    <span>
+      Still exploring myself. Still understanding life.
+    </span>
+
   </section>
 
 </main>
-
-<footer>
-  <span>© ALIVE WITH KRATIKA SONGARA</span>
-  <div>
-    <a href="https://www.instagram.com/alive_withkratika?stkn=MXM0a2szM2JrZTlwYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">INSTAGRAM</a>
-    <span class="divider">|</span>
-    <a href="mailto:hello@alivewithkratika.com">EMAIL</a>
-  </div>
-</footer>
-
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
-  });
-</script>
-</body>
-</html>
