@@ -1,48 +1,392 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<!-- ALIVE Google Analytics 4
-     Replace G-FCJKSENL3B with your Google Analytics Measurement ID.
--->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCJKSENL3B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FCJKSENL3B');
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Creations — ALIVE with Kratika Songara</title>
-<style>
-:root{--cream:#f8f2eb;--paper:#fffdf9;--espresso:#3c2b29;--muted:#756562;--rose:#b9827d;--gold:#b99a69;--line:#ded1c7}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--espresso);font-family:Georgia,"Times New Roman",serif}
-header{max-width:1080px;margin:auto;padding:28px;display:flex;justify-content:space-between}a{color:inherit;text-decoration:none}.brand{letter-spacing:.22em;font-size:22px;font-weight:bold}.back{font:11px Arial;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-main{max-width:1050px;margin:55px auto 90px;padding:0 25px}.eyebrow{font:11px Arial;letter-spacing:.24em;text-transform:uppercase;color:#8f625e;text-align:center}
-h1{text-align:center;font-size:clamp(44px,7vw,72px);font-weight:400;margin:16px 0}.intro{text-align:center;color:var(--muted);font-size:18px;line-height:1.7;max-width:650px;margin:0 auto 55px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.card{background:var(--paper);border:1px solid rgba(185,154,105,.3);padding:18px;box-shadow:0 15px 40px rgba(65,43,38,.06)}
-.book{height:330px;background:linear-gradient(135deg,#eee1d8,#fffaf4);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;position:relative}
-.book:before{content:"ALIVE";position:absolute;top:18px;left:20px;font:10px Arial;letter-spacing:.2em}.book-title{font-size:34px;line-height:1.05}.book-sub{font:11px Arial;letter-spacing:.1em;color:var(--rose);margin-top:15px;text-transform:uppercase}
-.card h2{font-size:24px;font-weight:400;margin:22px 0 8px}.card p{color:var(--muted);line-height:1.6;font-size:14px}.view{display:inline-block;margin-top:10px;padding:11px 16px;background:var(--espresso);color:white;font:10px Arial;letter-spacing:.14em;text-transform:uppercase}
-@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){header{padding:22px 20px}.grid{grid-template-columns:1fr}.book{height:390px}}
-</style>
-</head>
-<body><header><a class="brand" href="index.html">ALIVE</a><a class="back" href="index.html">Back to website</a></header>
-<main><div class="eyebrow">A little world of ideas</div><h1>Creations</h1>
-<p class="intro">Comics, workbooks, reflections, tools and little things I create to help you understand yourself — and come alive.</p>
-<div class="grid">
-<article class="card comic-card">
-  <div class="book" style="height:auto;background:none;">
-    <img src="dopamine-cover-web.jpg" alt="The Dopamine Monster comic by Kratika Songara" style="width:100%;height:auto;display:block;">
-  </div>
+<html lang="en">
+<head>
 
-  <div style="padding-top:18px;">
-    <h2>The Dopamine Monster 👾</h2>
-    <p>What if the tiny things stealing your attention are quietly stealing your life too?</p>
-    <a class="view" href="dopamine-monster">Read the comic →</a>
-  </div>
-</article>
-<article class="card"><div class="book"><div><div class="book-title">LIFE<br>MY WAY</div><div class="book-sub">A workbook for coming back to yourself</div></div></div>
-<h2>Freedom in You</h2><p>A space to explore who you are, what you want and what a life that feels like yours could look like.</p>
-<a class="view" href="life-my-way">Open creation</a></article>
-<article class="card"><div class="book"><div><div class="book-title">MORE<br>COMING<br>SOON</div><div class="book-sub">Stay alive to what’s next</div></div></div>
-<h2>More from ALIVE</h2><p>New comics, tools, workbooks and ideas will keep finding their way here.</p></article>
-</div></main></body></html>
+  <!-- ALIVE Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCJKSENL3B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FCJKSENL3B');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creations — ALIVE with Kratika Songara</title>
+
+  <!-- SAME FONTS AS THE MAIN ALIVE WEBSITE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
+
+  <!-- MASTER ALIVE CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- CREATIONS PAGE ONLY -->
+  <style>
+
+    .creations-page {
+      padding: 85px 5% 110px;
+    }
+
+    .creations-hero {
+      max-width: 760px;
+      margin: 0 auto 70px;
+      text-align: center;
+    }
+
+    .creations-eyebrow {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      margin-bottom: 18px;
+    }
+
+    .creations-hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(54px, 7vw, 82px);
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 22px;
+      color: var(--brown);
+    }
+
+    .creations-intro {
+      max-width: 650px;
+      margin: 0 auto;
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #756562;
+    }
+
+    .creations-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .creation-card {
+      background: var(--cream-2);
+      border: 1px solid rgba(142,81,65,.14);
+      padding: 18px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .creation-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(53,35,29,.08);
+    }
+
+    .creation-visual {
+      min-height: 330px;
+      background: linear-gradient(135deg, #eee1d8, #fffaf4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .creation-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .creation-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 22px 0 9px;
+      color: var(--brown);
+    }
+
+    .creation-description {
+      font-family: "DM Sans", sans-serif;
+      color: #756562;
+      line-height: 1.7;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .creation-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 17px;
+      border: 1px solid var(--rose);
+      color: var(--rose-dark);
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: all .2s ease;
+    }
+
+    .creation-button:hover {
+      background: var(--rose);
+      color: var(--white);
+    }
+
+    .life-way-visual {
+      min-height: 330px;
+      background: linear-gradient(135deg, #eee1d8, #fffaf4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .life-way-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      line-height: .95;
+      letter-spacing: .02em;
+      color: var(--brown);
+    }
+
+    .life-way-subtitle {
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-top: 18px;
+    }
+
+    .coming-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      line-height: .95;
+      color: var(--brown);
+    }
+
+    @media (max-width: 900px) {
+
+      .creations-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .creations-page {
+        padding: 60px 6% 80px;
+      }
+
+      .creations-hero {
+        margin-bottom: 50px;
+      }
+
+      .creations-hero h1 {
+        font-size: 58px;
+      }
+
+      .creations-intro {
+        font-size: 15px;
+      }
+
+      .creations-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .creation-card {
+        padding: 15px;
+      }
+
+      .creation-visual,
+      .life-way-visual {
+        min-height: 360px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SAME ALIVE HEADER AS INDEX -->
+  <header class="site-header">
+
+    <a href="index.html" class="brand" aria-label="ALIVE home">
+      <span class="brand-name">ALIVE</span>
+      <span class="brand-sub">COACHING WITH</span>
+      <span class="brand-script">Kratika Songara</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+    <nav class="nav">
+      <a href="about-final-named">ABOUT</a>
+      <a href="feedback">FEEDBACK</a>
+      <a href="creations">CREATIONS</a>
+      <a href="whats-new">WHAT’S NEW</a>
+      <a href="offer">OFFERS</a>
+      <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
+    </nav>
+
+  </header>
+
+
+  <!-- CREATIONS -->
+
+  <main class="creations-page">
+
+    <section class="creations-hero">
+
+      <div class="creations-eyebrow">
+        A little world of ideas
+      </div>
+
+      <h1>Creations</h1>
+
+      <p class="creations-intro">
+        Comics, workbooks, reflections, tools and little things I create
+        to help you understand yourself — and come alive.
+      </p>
+
+    </section>
+
+
+    <section class="creations-grid">
+
+
+      <!-- THE DOPAMINE MONSTER -->
+
+      <article class="creation-card">
+
+        <div class="creation-visual" style="background:none; padding:0;">
+
+          <img
+            src="dopamine-cover-web.jpg"
+            alt="The Dopamine Monster comic by Kratika Songara"
+          >
+
+        </div>
+
+        <h2 class="creation-title">
+          The Dopamine Monster 👾
+        </h2>
+
+        <p class="creation-description">
+          What if the tiny things stealing your attention are quietly
+          stealing your life too?
+        </p>
+
+        <a class="creation-button" href="dopamine-monster">
+          Read the comic →
+        </a>
+
+      </article>
+
+
+      <!-- LIFE MY WAY -->
+
+      <article class="creation-card">
+
+        <div class="life-way-visual">
+
+          <div>
+
+            <div class="life-way-title">
+              LIFE<br>
+              MY WAY
+            </div>
+
+            <div class="life-way-subtitle">
+              A workbook for coming back to yourself
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2 class="creation-title">
+          Freedom in You
+        </h2>
+
+        <p class="creation-description">
+          A space to explore who you are, what you want and what a life
+          that feels like yours could look like.
+        </p>
+
+        <a class="creation-button" href="life-my-way">
+          Open creation
+        </a>
+
+      </article>
+
+
+      <!-- MORE COMING SOON -->
+
+      <article class="creation-card">
+
+        <div class="life-way-visual">
+
+          <div>
+
+            <div class="coming-title">
+              MORE<br>
+              COMING<br>
+              SOON
+            </div>
+
+            <div class="life-way-subtitle">
+              Stay alive to what’s next
+            </div>
+
+          </div>
+
+        </div>
+
+        <h2 class="creation-title">
+          More from ALIVE
+        </h2>
+
+        <p class="creation-description">
+          New comics, tools, workbooks and ideas will keep finding
+          their way here.
+        </p>
+
+      </article>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- SAME MOBILE MENU SCRIPT AS INDEX -->
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+
+  </script>
+
+</body>
+</html>
