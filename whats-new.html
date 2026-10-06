@@ -1,54 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>What's New — ALIVE</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- SAME FONTS AS ALIVE HOMEPAGE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- MASTER ALIVE CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- WHAT'S NEW PAGE ONLY -->
+  <style>
+
+    .whats-new-page {
+      min-height: calc(100vh - 112px);
+      padding: 70px 5% 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-image-link {
+      display: block;
+      width: min(900px, 100%);
+      transition: transform .25s ease;
+    }
+
+    .news-image-link:hover {
+      transform: translateY(-4px);
+    }
+
+    .news-image-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .free-comic-button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 24px;
+      border: 1px solid var(--rose);
+      color: var(--rose-dark);
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: all .2s ease;
+    }
+
+    .free-comic-button:hover {
+      background: var(--rose);
+      color: var(--white);
+    }
+
+    footer {
+      padding: 28px 5%;
+      text-align: center;
+      border-top: 1px solid rgba(142,81,65,.14);
+      background: var(--cream-2);
+    }
+
+    footer p {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: #756562;
+    }
+
+    @media (max-width: 760px) {
+
+      .whats-new-page {
+        min-height: calc(100vh - 82px);
+        padding: 45px 6% 70px;
+      }
+
+      .news-image-link {
+        width: 100%;
+      }
+
+      .free-comic-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        padding: 14px 18px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<header class="site-header">
-  <a href="index.html" class="brand" aria-label="ALIVE home">
-    <span class="brand-name">ALIVE</span>
-    <span class="brand-sub">COACHING WITH</span>
-    <span class="brand-script">Kratika Songara</span>
-  </a>
+  <!-- SAME ALIVE HEADER AS HOMEPAGE -->
 
-  <button class="menu-toggle" aria-label="Open menu">☰</button>
+  <header class="site-header">
 
-  <nav class="nav">
-    <a href="index.html#about">ABOUT</a>
-    <a href="feedback">FEEDBACK</a>
-    <a href="creations">CREATIONS</a>
-    <a href="whats-new">WHAT’S NEW</a>
-    <a href="offer">OFFERS</a>
-    <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
-  </nav>
-</header>
+    <a href="index.html" class="brand" aria-label="ALIVE home">
+      <span class="brand-name">ALIVE</span>
+      <span class="brand-sub">COACHING WITH</span>
+      <span class="brand-script">Kratika Songara</span>
+    </a>
 
-<main class="whats-new-page">
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
 
-  <a href="dopamine-monster" class="news-image-link">
-    <img
-      src="meownalisa-2.jpg"
-      alt="Ms Meownalisa announces the ALIVE website launch and The Dopamine Monster free comic"
-    >
-  </a>
+    <nav class="nav">
+      <a href="about-final-named">ABOUT</a>
+      <a href="feedback">FEEDBACK</a>
+      <a href="creations">CREATIONS</a>
+      <a href="whats-new">WHAT’S NEW</a>
+      <a href="offer">OFFERS</a>
+      <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
+    </nav>
 
-  <a href="dopamine-monster" class="free-comic-button">
-    GET YOUR FREE COMIC →
-  </a>
+  </header>
 
-</main>
 
-<footer>
-  <p>© ALIVE — From Surviving to Living.</p>
-</footer>
+  <!-- WHAT'S NEW -->
+
+  <main class="whats-new-page">
+
+    <a href="dopamine-monster" class="news-image-link">
+
+      <img
+        src="meownalisa-2.jpg"
+        alt="Ms Meownalisa announces the ALIVE website launch and The Dopamine Monster free comic"
+      >
+
+    </a>
+
+    <a href="dopamine-monster" class="free-comic-button">
+      GET YOUR FREE COMIC →
+    </a>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© ALIVE — From Surviving to Living.</p>
+  </footer>
+
+
+  <!-- SAME MOBILE MENU SCRIPT AS HOMEPAGE -->
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+
+  </script>
 
 </body>
 </html>
