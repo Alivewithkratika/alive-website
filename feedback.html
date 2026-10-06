@@ -1,41 +1,198 @@
-<!DOCTYPE html><html lang="en"><head>
-<!-- ALIVE Google Analytics 4
-     Replace G-FCJKSENL3B with your Google Analytics Measurement ID.
--->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCJKSENL3B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-FCJKSENL3B');
-</script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+,<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="style.css?v=2">
+  <title>Feedback — ALIVE</title>
+  <meta
+    name="description"
+    content="Words from people who have experienced ALIVE."
+  />
 
-<title>Words — ALIVE</title>
+  <!-- SAME FONTS AS INDEX -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap"
+    rel="stylesheet"
+  >
 
+  <!-- SAME MASTER CSS AS INDEX -->
+  <link rel="stylesheet" href="style.css?v=2" />
 
-<style>body{margin:0;background:#f8f2eb;color:#3c2b29;font-family:Georgia,serif}header{padding:25px;display:flex;justify-content:space-between}.brand{letter-spacing:.2em;font-weight:bold}.back{font:11px Arial;letter-spacing:.12em;text-transform:uppercase;color:#756562}main{max-width:900px;margin:60px auto;padding:0 22px}.eyebrow{text-align:center;font:11px Arial;letter-spacing:.23em;text-transform:uppercase;color:#8f625e}h1{text-align:center;font-size:58px;font-weight:400;margin:18px 0 45px}.quotes{display:grid;gap:22px}.quote{background:#fffdf9;padding:32px;border-left:2px solid #b9827d;box-shadow:0 12px 35px #3c2b2910}.quote p{font-size:20px;line-height:1.6;margin:0 0 15px}.name{font:11px Arial;letter-spacing:.12em;text-transform:uppercase;color:#8f625e}@media(max-width:600px){h1{font-size:45px}}</style>
+  <style>
+    /* =========================================
+       FEEDBACK PAGE
+       Uses the ALIVE master design system
+    ========================================= */
+
+    .feedback-page {
+      background: var(--cream);
+      color: var(--brown);
+      min-height: 70vh;
+    }
+
+    .feedback-hero {
+      text-align: center;
+      padding: 100px 8% 70px;
+    }
+
+    .feedback-hero .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .feedback-hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 7vw, 96px);
+      font-weight: 500;
+      line-height: .9;
+      letter-spacing: -.025em;
+      margin: 0;
+    }
+
+    .feedback-hero h1 span {
+      color: var(--rose-dark);
+    }
+
+    .feedback-intro {
+      max-width: 620px;
+      margin: 30px auto 0;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .feedback-list {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 8% 110px;
+    }
+
+    .feedback-card {
+      padding: 55px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .feedback-card:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feedback-card blockquote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      font-weight: 400;
+      margin: 0 0 28px;
+    }
+
+    .feedback-card blockquote::before {
+      content: "“";
+      color: var(--rose);
+    }
+
+    .feedback-card blockquote::after {
+      content: "”";
+      color: var(--rose);
+    }
+
+    .feedback-name {
+      font-size: 11px;
+      letter-spacing: .16em;
+      color: var(--rose-dark);
+      text-transform: uppercase;
+    }
+
+    .feedback-closing {
+      text-align: center;
+      padding: 95px 8%;
+      background: #e9d8cf;
+    }
+
+    .feedback-closing h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: 500;
+      line-height: .95;
+      margin: 0 0 25px;
+    }
+
+    .feedback-closing p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    @media (max-width: 760px) {
+
+      .feedback-hero {
+        padding: 72px 8% 55px;
+      }
+
+      .feedback-hero h1 {
+        font-size: 58px;
+      }
+
+      .feedback-intro {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .feedback-list {
+        padding: 10px 8% 75px;
+      }
+
+      .feedback-card {
+        padding: 42px 0;
+      }
+
+      .feedback-card blockquote {
+        font-size: 34px;
+      }
+
+      .feedback-closing {
+        padding: 75px 8%;
+      }
+
+      .feedback-closing h2 {
+        font-size: 52px;
+      }
+    }
+  </style>
 </head>
 
+<body>
+
+  <!-- =========================================
+       SAME ALIVE HEADER AS INDEX
+  ========================================== -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand" aria-label="ALIVE home">
+      <span class="brand-name">ALIVE</span>
+      <span class="brand-sub">COACHING WITH</span>
+      <span class="brand-script">Kratika Songara</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+    <nav class="nav">
+      <a href="about-final-named.html">ABOUT</a>
+      <a href="feedback.html">FEEDBACK</a>
+      <a href="creations.html">CREATIONS</a>
+      <a href="whats-new.html">WHAT’S NEW</a>
+      <a href="offer.html">OFFERS</a>
+      <a href="begin.html">
+        BEGIN HERE <span aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+  </header>
 
 
-<body><header class="site-header">
+  <!--=========================================
+       FEEDBACK CONTENT
+  ========================================== -->
 
-  <a href="index.html" class="brand" aria-label="ALIVE home">
-    <span class="brand-name">ALIVE</span>
-    <span class="brand-sub">COACHING WITH</span>
-    <span class="brand-script">Kratika Songara</span>
-  </a>
-
-  <button class="menu-toggle" aria-label="Open menu">☰</button>
-
-  <nav class="nav">
-    <!-- COPY THE EXACT NAV LINKS FROM index.html HERE -->
-  </nav>
-
-</header>
 <main><div class="eyebrow">REAL WORDS</div><h1>What people say.</h1>
 
 <div class="quote">
@@ -60,16 +217,38 @@
 </main>
 </main>
 
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
+<section class="feedback-closing">
 
-  if (menuToggle && nav) {
-    menuToggle.addEventListener('click', () => {
+      <h2>
+        Your story<br>
+        matters too.
+      </h2>
+
+      <p>
+        Every journey begins with an honest conversation.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- SAME TOGGLE BEHAVIOUR AS INDEX -->
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
       nav.classList.toggle('open');
     });
-  }
-</script>
 
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+  </script>
 
-</body></html>
+</body>
+</html>
