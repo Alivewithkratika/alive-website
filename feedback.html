@@ -1,53 +1,51 @@
-,<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Feedback — ALIVE</title>
-  <meta
-    name="description"
-    content="Words from people who have experienced ALIVE."
-  />
+  <title>Feedback — ALIVE with Kratika Songara</title>
+  <meta name="description" content="Words from people who have experienced ALIVE.">
 
-  <!-- SAME FONTS AS INDEX -->
+  <!-- SAME FONTS AS THE ALIVE HOMEPAGE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
 
-  <!-- SAME MASTER CSS AS INDEX -->
-  <link rel="stylesheet" href="style.css?v=2" />
+  <!-- MASTER ALIVE CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
 
+  <!-- FEEDBACK PAGE ONLY -->
   <style>
-    /* =========================================
-       FEEDBACK PAGE
-       Uses the ALIVE master design system
-    ========================================= */
-
     .feedback-page {
       background: var(--cream);
       color: var(--brown);
-      min-height: 70vh;
+      padding: 0 5% 0;
     }
 
     .feedback-hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 85px 0 65px;
       text-align: center;
-      padding: 100px 8% 70px;
     }
 
-    .feedback-hero .eyebrow {
+    .feedback-eyebrow {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
       margin-bottom: 18px;
     }
 
     .feedback-hero h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(58px, 7vw, 96px);
-      font-weight: 500;
-      line-height: .9;
-      letter-spacing: -.025em;
+      font-size: clamp(52px, 7vw, 82px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--brown);
       margin: 0;
     }
 
@@ -56,104 +54,133 @@
     }
 
     .feedback-intro {
-      max-width: 620px;
-      margin: 30px auto 0;
-      font-size: 16px;
-      line-height: 1.9;
+      max-width: 600px;
+      margin: 22px auto 0;
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #756562;
     }
 
     .feedback-list {
       max-width: 900px;
       margin: 0 auto;
-      padding: 20px 8% 110px;
+      padding: 0 0 85px;
     }
 
     .feedback-card {
-      padding: 55px 0;
-      border-top: 1px solid var(--line);
+      padding: 42px 45px;
+      margin-bottom: 24px;
+      background: var(--cream-2);
+      border: 1px solid rgba(142,81,65,.14);
     }
 
-    .feedback-card:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .feedback-card blockquote {
+    .feedback-card .quote-heading {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.1;
+      font-size: clamp(29px, 4vw, 43px);
       font-weight: 400;
-      margin: 0 0 28px;
+      line-height: 1.2;
+      color: var(--brown);
+      margin: 0 0 20px;
     }
 
-    .feedback-card blockquote::before {
+    .feedback-card .quote-heading::before {
       content: "“";
       color: var(--rose);
     }
 
-    .feedback-card blockquote::after {
+    .feedback-card .quote-heading::after {
       content: "”";
       color: var(--rose);
     }
 
-    .feedback-name {
-      font-size: 11px;
-      letter-spacing: .16em;
-      color: var(--rose-dark);
+    .feedback-card p {
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #756562;
+      margin: 0 0 16px;
+    }
+
+    .feedback-card p strong {
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    .feedback-card .by {
+      margin-top: 25px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
       text-transform: uppercase;
+      color: var(--rose-dark);
     }
 
     .feedback-closing {
+      background: #f0e2d9;
       text-align: center;
-      padding: 95px 8%;
-      background: #e9d8cf;
+      padding: 80px 6%;
     }
 
     .feedback-closing h2 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 6vw, 78px);
-      font-weight: 500;
-      line-height: .95;
-      margin: 0 0 25px;
+      font-size: clamp(45px, 6vw, 72px);
+      font-weight: 400;
+      line-height: .98;
+      color: var(--brown);
+      margin: 0 0 20px;
     }
 
     .feedback-closing p {
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #756562;
       margin: 0;
-      font-size: 16px;
     }
 
     @media (max-width: 760px) {
+      .feedback-page {
+        padding: 0 6%;
+      }
 
       .feedback-hero {
-        padding: 72px 8% 55px;
+        padding: 60px 0 42px;
       }
 
       .feedback-hero h1 {
-        font-size: 58px;
+        font-size: 54px;
       }
 
       .feedback-intro {
-        font-size: 15px;
-        line-height: 1.8;
+        font-size: 14px;
       }
 
       .feedback-list {
-        padding: 10px 8% 75px;
+        padding-bottom: 60px;
       }
 
       .feedback-card {
-        padding: 42px 0;
+        padding: 30px 23px;
+        margin-bottom: 18px;
       }
 
-      .feedback-card blockquote {
-        font-size: 34px;
+      .feedback-card .quote-heading {
+        font-size: 32px;
+      }
+
+      .feedback-card p {
+        font-size: 13px;
       }
 
       .feedback-closing {
-        padding: 75px 8%;
+        padding: 65px 7%;
       }
 
       .feedback-closing h2 {
-        font-size: 52px;
+        font-size: 48px;
       }
     }
   </style>
@@ -161,91 +188,128 @@
 
 <body>
 
-  <!-- =========================================
-       SAME ALIVE HEADER AS INDEX
-  ========================================== -->
-
+  <!-- SAME ALIVE HEADER AS INDEX -->
   <header class="site-header">
-
     <a href="index.html" class="brand" aria-label="ALIVE home">
       <span class="brand-name">ALIVE</span>
       <span class="brand-sub">COACHING WITH</span>
       <span class="brand-script">Kratika Songara</span>
     </a>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <button class="menu-toggle" aria-label="Open menu"
+      aria-expanded="false" type="button">☰</button>
 
     <nav class="nav">
-      <a href="about-final-named.html">ABOUT</a>
-      <a href="feedback.html">FEEDBACK</a>
-      <a href="creations.html">CREATIONS</a>
-      <a href="whats-new.html">WHAT’S NEW</a>
-      <a href="offer.html">OFFERS</a>
-      <a href="begin.html">
-        BEGIN HERE <span aria-hidden="true">→</span>
-      </a>
+      <a href="about-final-named">ABOUT</a>
+      <a href="feedback">FEEDBACK</a>
+      <a href="creations">CREATIONS</a>
+      <a href="whats-new">WHAT’S NEW</a>
+      <a href="offer">OFFERS</a>
+      <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
     </nav>
-
   </header>
 
+  <!-- FEEDBACK CONTENT -->
+  <main class="feedback-page">
 
-  <!--=========================================
-       FEEDBACK CONTENT
-  ========================================== -->
-
-<main><div class="eyebrow">REAL WORDS</div><h1>What people say.</h1>
-
-<div class="quote">
-  <p>“I genuinely felt heard and understood.”</p>
-  <p>Kratika doesn’t simply tell you what you should feel or do. She asks questions that make you pause and reflect. She helped me step back and observe my thoughts rather than simply react to them.</p>
-  <p><strong>She didn’t just give me advice; she helped me understand myself better, question my thoughts, and develop a new perspective.</strong></p>
-  <div class="by">— Bhavna, Germany</div>
-</div>
-
-<div class="quote">
-  <p>“The real clarity I got was after reading The Dopamine Monster.”</p>
-  <p>The story was very well crafted, and it made me want to know more. ALIVE is a very good initiative. It really changed my mind and made me look at my life from another perspective.</p>
-  <div class="by">— Romey Raj, Jharkhand</div>
-</div>
-<div class="quote">
-  <p>“I genuinely loved our session 🤍”</p>
-  <p>You were so warm, comforting and easy to talk to. The way you explained things gave me so much clarity and made everything feel simple and easy to understand.</p>
-  <p>I left feeling <strong>lighter, calmer and more positive.</strong> Thank you for your guidance and such a safe, reassuring energy ✨</p>
-  <div class="by">— xxx, Vietnam</div>
-</div>
-     
-</main>
-</main>
-
-<section class="feedback-closing">
-
-      <h2>
-        Your story<br>
-        matters too.
-      </h2>
-
-      <p>
-        Every journey begins with an honest conversation.
+    <section class="feedback-hero">
+      <div class="feedback-eyebrow">Real words</div>
+      <h1>What people <span>say.</span></h1>
+      <p class="feedback-intro">
+        Every conversation is an opportunity to pause, reflect
+        and see things from a new perspective. Here are a few
+        words from people who have experienced ALIVE.
       </p>
-
     </section>
 
+    <section class="feedback-list" aria-label="Testimonials">
+
+      <!-- TESTIMONIAL 1 -->
+      <article class="feedback-card">
+        <h2 class="quote-heading">
+          I genuinely felt heard and understood.
+        </h2>
+
+        <p>
+          Kratika doesn’t simply tell you what you should feel or do.
+          She asks questions that make you pause and reflect.
+          She helped me step back and observe my thoughts rather
+          than simply react to them.
+        </p>
+
+        <p>
+          <strong>
+            She didn’t just give me advice; she helped me understand
+            myself better, question my thoughts, and develop a new perspective.
+          </strong>
+        </p>
+
+        <div class="by">— Bhavna, Germany</div>
+      </article>
+
+      <!-- TESTIMONIAL 2 -->
+      <article class="feedback-card">
+        <h2 class="quote-heading">
+          The real clarity I got was after reading The Dopamine Monster.
+        </h2>
+
+        <p>
+          The story was very well crafted, and it made me want to know
+          more. ALIVE is a very good initiative. It really changed my
+          mind and made me look at my life from another perspective.
+        </p>
+
+        <div class="by">— Romey Raj, Jharkhand</div>
+      </article>
+
+      <!-- TESTIMONIAL 3 -->
+      <article class="feedback-card">
+        <h2 class="quote-heading">
+          I genuinely loved our session 🤍
+        </h2>
+
+        <p>
+          You were so warm, comforting and easy to talk to.
+          The way you explained things gave me so much clarity
+          and made everything feel simple and easy to understand.
+        </p>
+
+        <p>
+          I left feeling <strong>lighter, calmer and more positive.</strong>
+          Thank you for your guidance and such a safe, reassuring energy ✨
+        </p>
+
+        <div class="by">— xxx, Vietnam</div>
+      </article>
+
+    </section>
   </main>
 
+  <!-- CLOSING -->
+  <section class="feedback-closing">
+    <h2>Your story<br>matters too.</h2>
+    <p>Every journey begins with an honest conversation.</p>
+  </section>
 
-  <!-- SAME TOGGLE BEHAVIOUR AS INDEX -->
-
+  <!-- SAME MOBILE MENU BEHAVIOUR AS INDEX -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
 
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close menu' : 'Open menu'
+      );
     });
 
     document.querySelectorAll('.nav a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
       });
     });
   </script>
