@@ -161,13 +161,51 @@
   close.addEventListener('click',closeModal);
   modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
-  form.addEventListener('submit',function(event){
-    event.preventDefault();
-    if(!form.reportValidity())return;
-    /* Payment opens only after mandatory fields validate. Email/Google Sheet saving must be connected to a secure form endpoint before launch. */
-    status.textContent='Opening secure payment checkout…';
-    window.location.href=paymentUrl;
-  });
+  
+form.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  if (!form.reportValidity()) return;
+
+  const button = form.querySelector('.alive-pay-now');
+  button.disabled = true;
+  status.textContent = 'Saving your registration details…';
+
+  const data = {
+    name: form.elements.name.value.trim(),
+    email: form.elements.email.value.trim(),
+    phone: form.elements.phone.value.trim(),
+    occupation: form.elements.occupation.value.trim(),
+    reason: form.elements.reason.value.trim(),
+    goals: form.elements.goal.value.trim(),
+    preferredContact: form.elements.preferredContact.value
+  };
+
+  try {
+    await fetch(
+      'https://script.google.com/macros/s/AKfycby_mkio6au6Zv0e0wp-npeYv9cu25uUoiFfh0iKsO95vdfyGHs0M7wwR5DN16KAmFWV/exec',
+      {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+      }
+    );
+
+    status.textContent =
+      'Details submitted. Please continue to payment.';
+
+    window.location.href = paymentUrl;
+
+  } catch (error) {
+    button.disabled = false;
+    status.textContent =
+      'We could not submit your details. Please try again.';
+  }
+});
+
   const toggle=document.querySelector('.menu-toggle');
   const nav=document.querySelector('.nav');
   if(toggle&&nav){
