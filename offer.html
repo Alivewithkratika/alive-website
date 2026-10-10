@@ -1,765 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Offers — ALIVE with Kratika Songara</title>
-
-  <!-- SAME FONTS AS ALIVE HOMEPAGE -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- MASTER ALIVE CSS -->
-  <link rel="stylesheet" href="style.css?v=2">
-
-  <!-- OFFERS PAGE ONLY -->
-  <style>
-
-    .offer-page {
-      padding: 85px 5% 110px;
-    }
-
-    /* HERO */
-
-    .offer-hero {
-      max-width: 850px;
-      margin: 0 auto 75px;
-      text-align: center;
-    }
-
-    .offer-eyebrow {
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
-      margin-bottom: 18px;
-    }
-
-    .offer-hero h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(52px, 7vw, 82px);
-      font-weight: 400;
-      line-height: .98;
-      color: var(--brown);
-      margin: 0 0 25px;
-    }
-
-    .offer-script {
-      font-family: "Allura", cursive;
-      color: var(--rose);
-      font-size: 34px;
-      font-weight: 400;
-      margin-bottom: 22px;
-    }
-
-    .offer-intro {
-      max-width: 680px;
-      margin: 0 auto;
-      font-family: "DM Sans", sans-serif;
-      font-size: 16px;
-      line-height: 1.85;
-      color: #756562;
-    }
-
-
-    /* MAIN OFFER */
-
-    .main-offer {
-      max-width: 1050px;
-      margin: 0 auto;
-      background: var(--cream-2);
-      border: 1px solid rgba(142,81,65,.16);
-      padding: 55px 60px 60px;
-      box-shadow: 0 18px 50px rgba(53,35,29,.06);
-    }
-
-    .offer-label {
-      text-align: center;
-      font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
-      margin-bottom: 14px;
-    }
-
-    .main-offer h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(38px, 5vw, 58px);
-      font-weight: 400;
-      line-height: 1;
-      text-align: center;
-      color: var(--brown);
-      margin: 0 0 12px;
-    }
-
-    .offer-tagline {
-      text-align: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
-      color: var(--rose-dark);
-      margin-bottom: 42px;
-    }
-
-
-    /* INTRO */
-
-    .offer-story {
-      max-width: 760px;
-      margin: 0 auto 45px;
-      text-align: center;
-    }
-
-    .offer-story p {
-      font-family: "DM Sans", sans-serif;
-      font-size: 15px;
-      line-height: 1.85;
-      color: #756562;
-      margin: 0 0 15px;
-    }
-
-
-    /* TWO DAYS */
-
-    .days {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 45px;
-    }
-
-    .day-card {
-      padding: 35px 32px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .day-number {
-      font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 12px;
-    }
-
-    .day-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
-      font-weight: 400;
-      color: var(--brown);
-      margin: 0 0 8px;
-    }
-
-    .day-subtitle {
-      font-family: "Allura", cursive;
-      font-size: 25px;
-      color: var(--rose);
-      margin-bottom: 22px;
-    }
-
-    .day-card p {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      line-height: 1.75;
-      color: #756562;
-      margin: 0 0 18px;
-    }
-
-    .day-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .day-card li {
-      font-family: "DM Sans", sans-serif;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #756562;
-      margin-bottom: 7px;
-    }
-
-
-    /* EXPERIENCE */
-
-    .experience-section {
-      max-width: 850px;
-      margin: 70px auto 0;
-      text-align: center;
-    }
-
-    .experience-section h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
-      font-weight: 400;
-      color: var(--brown);
-      margin: 0 0 15px;
-    }
-
-    .experience-section > p {
-      font-family: "DM Sans", sans-serif;
-      color: #756562;
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .experience-item {
-      padding: 22px 12px;
-      border: 1px solid rgba(142,81,65,.13);
-      background: var(--white);
-    }
-
-    .experience-item strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-      font-weight: 500;
-      color: var(--brown);
-      margin-bottom: 5px;
-    }
-
-    .experience-item span {
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      color: #756562;
-    }
-
-
-    /* WHO IT IS FOR */
-
-    .for-you {
-      max-width: 760px;
-      margin: 75px auto 0;
-      text-align: center;
-    }
-
-    .for-you h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
-      font-weight: 400;
-      color: var(--brown);
-      margin: 0 0 20px;
-    }
-
-    .for-you p {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #756562;
-      margin-bottom: 25px;
-    }
-
-    .for-you ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .for-you li {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #756562;
-      padding: 9px 0;
-    }
-
-    .for-you li::before {
-      content: "— ";
-      color: var(--rose);
-    }
-
-
-    /* OUTCOME */
-
-    .outcome {
-      max-width: 780px;
-      margin: 75px auto 0;
-      padding: 45px 35px;
-      background: #f3e7df;
-      text-align: center;
-    }
-
-    .outcome h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 40px;
-      font-weight: 400;
-      color: var(--brown);
-      margin: 0 0 20px;
-    }
-
-    .outcome p {
-      font-family: "DM Sans", sans-serif;
-      font-size: 15px;
-      line-height: 1.8;
-      color: #756562;
-      margin: 0;
-    }
-
-    .outcome-script {
-      display: block;
-      margin-top: 20px;
-      font-family: "Allura", cursive;
-      font-size: 32px;
-      color: var(--rose-dark);
-    }
-
-
-    /* CTA */
-
-    .offer-cta {
-      text-align: center;
-      margin-top: 65px;
-    }
-
-    .offer-cta h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 40px;
-      font-weight: 400;
-      color: var(--brown);
-      margin: 0 0 12px;
-    }
-
-    .offer-cta p {
-      font-family: "DM Sans", sans-serif;
-      font-size: 14px;
-      color: #756562;
-      margin: 0 0 25px;
-    }
-
-    .offer-button {
-      display: inline-block;
-      padding: 15px 28px;
-      border: 1px solid var(--rose);
-      color: var(--rose-dark);
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      transition: all .2s ease;
-    }
-
-    .offer-button:hover {
-      background: var(--rose);
-      color: var(--white);
-    }
-
-
-    /* MOBILE */
-
-    @media (max-width: 760px) {
-
-      .offer-page {
-        padding: 60px 6% 80px;
-      }
-
-      .offer-hero {
-        margin-bottom: 50px;
-      }
-
-      .offer-hero h1 {
-        font-size: 58px;
-      }
-
-      .offer-script {
-        font-size: 29px;
-      }
-
-      .offer-intro {
-        font-size: 15px;
-      }
-
-      .main-offer {
-        padding: 38px 22px 45px;
-      }
-
-      .main-offer h2 {
-        font-size: 43px;
-      }
-
-      .offer-tagline {
-        font-size: 20px;
-      }
-
-      .days {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .day-card {
-        padding: 30px 5px;
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .experience-section h3,
-      .for-you h3,
-      .outcome h3,
-      .offer-cta h3 {
-        font-size: 36px;
-      }
-
-      .outcome {
-        padding: 35px 22px;
-      }
-
-    }
-
-    @media (max-width: 420px) {
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Day ALIVE Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+<style>
+:root{--alive-cream:#fbf5ef;--alive-cream2:#fffaf6;--alive-rose:#b87862;--alive-dark:#8e5141;--alive-brown:#35231d;--alive-line:#e8d3c6;--alive-peach:#f8e4d9}
+.offer-experience{background:var(--alive-cream);color:var(--alive-brown);font-family:'DM Sans',sans-serif;line-height:1.65;padding:28px 20px 58px}
+.offer-experience *{box-sizing:border-box}
+.offer-wrap{max-width:1120px;margin:0 auto}
+.offer-top{text-align:center;padding:10px 0 24px}
+.offer-mark{font-family:'Cormorant Garamond',serif;letter-spacing:.28em;font-size:26px;color:#a86e35}
+.offer-ornament{color:var(--alive-rose);font-size:20px;line-height:1}
+.offer-top h1,.offer-experience h2,.offer-experience h3{font-family:'Cormorant Garamond',serif;line-height:1.04}
+.offer-top h1{font-size:clamp(38px,6vw,70px);margin:14px 0 12px;font-weight:600;color:var(--alive-brown)}
+.offer-top h1 span{display:block;color:#a9553d;font-size:1.08em}
+.offer-lead{max-width:720px;margin:0 auto;color:#5c453c;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.offer-one-on-one{max-width:790px;margin:24px auto 28px;text-align:center;padding:18px 22px;background:var(--alive-peach);border-radius:22px}
+.offer-one-on-one strong{display:block;font-size:clamp(17px,2.8vw,24px);letter-spacing:.14em;color:var(--alive-dark);margin-bottom:3px}
+.offer-one-on-one p{margin:0;font-size:16px}
+.offer-days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.offer-day{display:grid;grid-template-columns:minmax(130px,.95fr) 1.05fr;align-items:center;gap:16px;background:#f9e9e1;border-radius:24px;padding:22px;min-height:320px}
+.offer-day img{width:100%;height:230px;object-fit:contain;mix-blend-mode:multiply;border-radius:14px}
+.offer-kicker{color:#a9553d;letter-spacing:.16em;font-size:13px;font-weight:700;margin-bottom:8px}
+.offer-day h2{font-size:clamp(27px,3.2vw,39px);margin:0 0 12px}
+.offer-day p{font-size:15px;margin:0}
+.offer-tag{display:inline-block;background:#f5d5c6;border-radius:30px;padding:4px 16px;font-size:18px;font-weight:700;margin-top:13px}
+.offer-price{margin:26px 6px 30px;border:1.5px solid #c28a3e;border-radius:22px;padding:22px;text-align:center;background:rgba(255,250,246,.72)}
+.offer-price-small{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#a9553d;font-weight:700}
+.offer-amount{font-family:'Cormorant Garamond',serif;font-weight:700;color:#a9553d;font-size:clamp(48px,7vw,76px);line-height:1.05;margin:8px 0}
+.offer-price p{margin:0}
+.offer-bonus-head{text-align:center;margin:0 auto 22px}
+.offer-bonus-head h2{font-size:clamp(35px,5vw,48px);margin:0 0 8px}
+.offer-bonus-head p{margin:0}
+.offer-bonuses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.offer-bonus{background:var(--alive-cream2);border:1px solid #f0dfd4;border-radius:22px;padding:20px;box-shadow:0 8px 22px rgba(120,75,54,.05)}
+.offer-bonus-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.offer-bonus-stamp{flex:0 0 76px;min-width:76px;text-align:center;background:#f8e0d3;border:1px solid #d6a18a;border-radius:13px;padding:8px 5px;color:var(--alive-dark)}
+.offer-bonus-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;line-height:1}
+.offer-bonus-word{font-size:12px;font-weight:700;letter-spacing:.08em;white-space:nowrap}
+.offer-bonus h3{font-size:25px;margin:0}
+.offer-bonus p{font-size:14px;margin:0}
+.offer-cta{text-align:center;padding:34px 0 0}
+.offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#bd806c,#8e5141);color:#fffaf6!important;border:1px solid #d6a18a;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 6px 0 rgba(95,53,41,.12);transition:transform .2s}
+.offer-join:hover{transform:translateY(-2px)}
+.offer-signoff{font-family:'Allura',cursive;font-size:28px;color:#a9553d;margin:14px 0 0}
+@media(max-width:760px){.offer-experience{padding:18px 14px 38px}.offer-days{grid-template-columns:1fr}.offer-day{grid-template-columns:minmax(110px,.85fr) 1.15fr;padding:16px;min-height:unset}.offer-day img{height:200px}.offer-bonuses{grid-template-columns:1fr}.offer-bonus{padding:17px}.offer-bonus h3{font-size:25px}.offer-price{margin:22px 0}.offer-lead{letter-spacing:.07em}}
+@media(max-width:420px){.offer-day{grid-template-columns:1fr 1.1fr;gap:10px}.offer-day img{height:170px}.offer-day h2{font-size:27px}.offer-day p{font-size:13px}.offer-tag{font-size:15px}.offer-one-on-one{padding:15px}.offer-bonus-stamp{flex-basis:70px;min-width:70px}}
+</style>
 </head>
-
 <body>
-
-
-  <!-- SAME ALIVE HEADER AS INDEX -->
-
-  <header class="site-header">
-
-    <a href="index.html" class="brand" aria-label="ALIVE home">
-      <span class="brand-name">ALIVE</span>
-      <span class="brand-sub">COACHING WITH</span>
-      <span class="brand-script">Kratika Songara</span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
-
-    <nav class="nav">
-      <a href="about-final-named">ABOUT</a>
-      <a href="feedback">FEEDBACK</a>
-      <a href="creations">CREATIONS</a>
-      <a href="whats-new">WHAT’S NEW</a>
-      <a href="offer">OFFERS</a>
-      <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
-    </nav>
-
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="ALIVE home">
+    <span class="brand-name">ALIVE</span>
+    <span class="brand-sub">FROM SURVIVING TO LIVING</span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="about-final-named">ABOUT</a>
+    <a href="feedback">FEEDBACK</a>
+    <a href="creations">CREATIONS</a>
+    <a href="whats-new">WHAT'S NEW</a>
+    <a href="offer" aria-current="page">OFFERS</a>
+    <a href="begin">BEGIN</a>
+  </nav>
+</header>
+<main class="offer-experience">
+<div class="offer-wrap">
+  <header class="offer-top">
+    <div class="offer-mark">ALIVE</div><div class="offer-ornament">— ♥ —</div>
+    <h1>We Bring You a <span>Two-Day ALIVE Experience</span></h1>
+    <p class="offer-lead">A personal journey to reconnect, rediscover and create a life that feels like yours.</p>
   </header>
-
-
-  <!-- OFFER PAGE -->
-
-  <main class="offer-page">
-
-
-    <!-- HERO -->
-
-    <section class="offer-hero">
-
-      <div class="offer-eyebrow">
-        The ALIVE Experience
-      </div>
-
-      <h1>
-        Two Days<br>
-        To Come Back To Yourself
-      </h1>
-
-      <div class="offer-script">
-        Pause. Reconnect. Rediscover. Move.
-      </div>
-
-      <p class="offer-intro">
-        A two-day immersive experience for people who feel disconnected,
-        drained, stuck or simply ready for more from life.
-        A space to slow down, understand yourself, rediscover what matters
-        and take one real step towards a life that feels more like yours.
-      </p>
-
-    </section>
-
-
-    <!-- MAIN OFFER -->
-
-    <section class="main-offer">
-
-      <div class="offer-label">
-        A 2-Day ALIVE Experience
-      </div>
-
-      <h2>
-        ALIVE
-      </h2>
-
-      <div class="offer-tagline">
-        From surviving your routine to reconnecting with your life.
-      </div>
-
-
-      <div class="offer-story">
-
-        <p>
-          Sometimes nothing is obviously wrong.
-        </p>
-
-        <p>
-          You are working. You are functioning. You are doing what
-          you are supposed to do.
-        </p>
-
-        <p>
-          And yet, somewhere along the way, life starts feeling
-          repetitive, heavy or disconnected.
-        </p>
-
-        <p>
-          This experience is an invitation to pause and ask:
-          <strong>What do I actually want my life to feel like?</strong>
-        </p>
-
-      </div>
-
-
-      <!-- TWO DAYS -->
-
-      <div class="days">
-
-
-        <!-- DAY 1 -->
-
-        <article class="day-card">
-
-          <div class="day-number">
-            Day 01
-          </div>
-
-          <h3>
-            Remember You
-          </h3>
-
-          <div class="day-subtitle">
-            Before life got serious.
-          </div>
-
-          <p>
-            Day one is about reconnecting with the person underneath
-            the expectations, routines and roles you have collected.
-          </p>
-
-          <ul>
-
-            <li>Who was I before life got serious?</li>
-
-            <li>What have I stopped doing that once made me feel alive?</li>
-
-            <li>What expectations am I carrying?</li>
-
-            <li>What has been quietly draining my energy?</li>
-
-            <li>What have I been avoiding?</li>
-
-          </ul>
-
-        </article>
-
-
-        <!-- DAY 2 -->
-
-        <article class="day-card">
-
-          <div class="day-number">
-            Day 02
-          </div>
-
-          <h3>
-            Design Your Life
-          </h3>
-
-          <div class="day-subtitle">
-            Make it feel like yours.
-          </div>
-
-          <p>
-            Day two moves from awareness into possibility, intention
-            and real action.
-          </p>
-
-          <ul>
-
-            <li>What do I actually want more of?</li>
-
-            <li>What do I want less of?</li>
-
-            <li>What would a life that feels like mine look like?</li>
-
-            <li>What have I been postponing?</li>
-
-            <li>What can I start doing now?</li>
-
-          </ul>
-
-        </article>
-
-
-      </div>
-
-
-      <!-- THE EXPERIENCE -->
-
-      <section class="experience-section">
-
-        <h3>
-          This isn't just a talk.
-        </h3>
-
-        <p>
-          You won't spend two days sitting and listening.
-          The ALIVE Experience is designed to make you
-          <em>experience</em> the ideas.
-        </p>
-
-        <div class="experience-grid">
-
-          <div class="experience-item">
-            <strong>Reflect</strong>
-            <span>Understand yourself</span>
-          </div>
-
-          <div class="experience-item">
-            <strong>Connect</strong>
-            <span>Be seen and heard</span>
-          </div>
-
-          <div class="experience-item">
-            <strong>Explore</strong>
-            <span>Discover what matters</span>
-          </div>
-
-          <div class="experience-item">
-            <strong>Act</strong>
-            <span>Take your first step</span>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- WHO IT IS FOR -->
-
-      <section class="for-you">
-
-        <h3>
-          Is this for you?
-        </h3>
-
-        <p>
-          Maybe you are not looking for a complete life makeover.
-          Maybe you simply know that something inside you wants more.
-        </p>
-
-        <ul>
-
-          <li>You feel disconnected from yourself.</li>
-
-          <li>You are functioning, but not feeling fulfilled.</li>
-
-          <li>You feel drained, stuck or low in energy.</li>
-
-          <li>You miss an older, more playful version of yourself.</li>
-
-          <li>You feel burdened by expectations or social image.</li>
-
-          <li>You want more clarity about what you really want.</li>
-
-          <li>You are ready to stop postponing your life.</li>
-
-        </ul>
-
-      </section>
-
-
-      <!-- OUTCOME -->
-
-      <section class="outcome">
-
-        <h3>
-          Come back to yourself.
-        </h3>
-
-        <p>
-          The intention isn't to leave you with a hundred things
-          to change.
-        </p>
-
-        <p>
-          It's to leave you with greater awareness, renewed energy,
-          a clearer sense of what matters to you — and a real first
-          step you are ready to take.
-        </p>
-
-        <span class="outcome-script">
-          Feel fulfilled. Feel alive.
-        </span>
-
-      </section>
-
-
-      <!-- CTA -->
-
-      <section class="offer-cta">
-
-        <h3>
-          Ready to feel more alive?
-        </h3>
-
-        <p>
-          Take the first step towards making your life feel more like yours.
-        </p>
-
-        <a class="offer-button" href="begin">
-          Begin Here →
-        </a>
-
-      </section>
-
-
-    </section>
-
-  </main>
-
-
-  <!-- SAME MOBILE MENU SCRIPT AS INDEX -->
-
-  <script>
-
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-      });
-    });
-
-  </script>
-
-
-</body>
-</html>
+  <section class="offer-one-on-one">
+    <strong>A ONE-ON-ONE EXPERIENCE</strong>
+    <p>Just you, your thoughts, your dreams and dedicated personal attention.</p>
+  </section>
+  <section class="offer-days">
+    <article class="offer-day">
+      <div><img src="data:image/jpeg;base64,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
