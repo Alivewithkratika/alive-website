@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Two-Day ALIVE Experience — Kratika Songara</title>
-  <meta name="description" content="A personal two-day ALIVE Experience to reconnect, rediscover and create a life that feels like yours.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Day ALIVE Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+<style>
 :root{--alive-cream:#fbf5ef;--alive-cream2:#fffaf6;--alive-rose:#b87862;--alive-dark:#8e5141;--alive-brown:#35231d;--alive-line:#e8d3c6;--alive-peach:#f8e4d9}
 .offer-experience{background:var(--alive-cream);color:var(--alive-brown);font-family:'DM Sans',sans-serif;line-height:1.65;padding:28px 20px 58px}
 .offer-experience *{box-sizing:border-box}
@@ -47,60 +44,30 @@
 .offer-bonus-word{font-size:12px;font-weight:700;letter-spacing:.08em;white-space:nowrap}
 .offer-bonus h3{font-size:25px;margin:0}
 .offer-bonus p{font-size:14px;margin:0}
-.offer-cta{text-align:center;padding:34px 0 0}
-.offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#bd806c,#8e5141);color:#fffaf6!important;border:1px solid #d6a18a;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 6px 0 rgba(95,53,41,.12);transition:transform .2s}
+.offer-experience .offer-cta{display:block;width:100%;text-align:center;padding:34px 0 0;background:transparent!important;color:var(--alive-brown);border:0;box-shadow:none;border-radius:0;margin:0}
+.offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#e9d1b0,#d5b27d);color:#35231d!important;border:1px solid #c8a16a;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 4px 12px rgba(95,53,41,.08);transition:transform .2s}
 .offer-join:hover{transform:translateY(-2px)}
-.offer-signoff{font-family:'Allura',cursive;font-size:28px;color:#a9553d;margin:14px 0 0}
+.offer-experience .offer-signoff{font-family:'Allura',cursive;font-size:28px;color:#8e6d51;margin:14px 0 0}
 @media(max-width:760px){.offer-experience{padding:18px 14px 38px}.offer-days{grid-template-columns:1fr}.offer-day{grid-template-columns:minmax(110px,.85fr) 1.15fr;padding:16px;min-height:unset}.offer-day img{height:200px}.offer-bonuses{grid-template-columns:1fr}.offer-bonus{padding:17px}.offer-bonus h3{font-size:25px}.offer-price{margin:22px 0}.offer-lead{letter-spacing:.07em}}
 @media(max-width:420px){.offer-day{grid-template-columns:1fr 1.1fr;gap:10px}.offer-day img{height:170px}.offer-day h2{font-size:27px}.offer-day p{font-size:13px}.offer-tag{font-size:15px}.offer-one-on-one{padding:15px}.offer-bonus-stamp{flex-basis:70px;min-width:70px}}
-
-/* In-page booking overlay */
-.offer-experience { position:relative; }
-.offer-join { cursor:pointer; }
-.alive-modal { display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:18px; }
-.alive-modal.is-open { display:flex; }
-.alive-modal-backdrop { position:absolute; inset:0; background:rgba(53,35,29,.48); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); }
-.alive-modal-panel { position:relative; z-index:1; width:min(100%,680px); max-height:92vh; overflow:auto; background:rgba(255,250,246,.97); border:1px solid #e8d3c6; border-radius:26px; box-shadow:0 24px 80px rgba(53,35,29,.22); padding:clamp(22px,5vw,42px); }
-.alive-modal-close { position:absolute; top:12px; right:16px; border:0; background:transparent; color:#35231d; font-size:32px; line-height:1; cursor:pointer; }
-.alive-modal-kicker { margin:0 30px 8px 0; color:#8e5141; letter-spacing:.14em; font-size:11px; font-weight:700; }
-.alive-modal-panel h2 { margin:0 25px 8px 0; color:#35231d; font-family:'Cormorant Garamond',serif; font-size:clamp(34px,6vw,48px); line-height:1; }
-.alive-modal-intro { margin:0 0 22px; color:#675148; font-size:14px; }
-.alive-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.alive-modal-panel label { display:block; color:#49332b; font-size:13px; font-weight:600; }
-.alive-modal-panel input,.alive-modal-panel textarea { display:block; width:100%; margin-top:6px; border:1px solid #dfc8bc; border-radius:12px; background:#fffdfb; padding:12px 13px; color:#35231d; font:400 15px 'DM Sans',sans-serif; outline:none; }
-.alive-modal-panel input:focus,.alive-modal-panel textarea:focus { border-color:#b87862; box-shadow:0 0 0 3px rgba(184,120,98,.15); }
-.alive-why-label { margin-top:15px; }
-.alive-modal-panel textarea { resize:vertical; min-height:100px; }
-.alive-payment-summary { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:18px; padding:15px 0; border-top:1px solid #ead8ce; border-bottom:1px solid #ead8ce; color:#49332b; font-size:14px; }
-.alive-payment-summary strong { font-family:'Cormorant Garamond',serif; font-size:28px; color:#8e5141; }
-.alive-payment-note { margin:10px 0 12px; font-size:12px; color:#735c52; }
-.alive-pay-button { width:100%; border:0; border-radius:40px; padding:15px 20px; color:#fffaf6; background:linear-gradient(135deg,#bd806c,#8e5141); font:700 15px 'DM Sans',sans-serif; letter-spacing:.04em; cursor:pointer; }
-.alive-pay-button:disabled { opacity:.65; cursor:wait; }
-.alive-form-status { min-height:18px; margin:10px 0 0; font-size:13px; color:#8e5141; }
-.alive-privacy-note { margin:8px 0 0; color:#88766e; font-size:11px; text-align:center; }
-body.modal-open { overflow:hidden; }
-@media(max-width:520px) { .alive-form-grid { grid-template-columns:1fr; gap:12px; } .alive-modal { padding:10px; } .alive-modal-panel { max-height:94vh; border-radius:20px; padding:25px 18px; } }
-
-  </style>
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a href="#top" class="brand" aria-label="ALIVE home">
-      <span class="brand-name">ALIVE</span>
-      <span class="brand-sub">COACHING WITH</span>
-      <span class="brand-script">Kratika Songara</span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
-
-    <nav class="nav">
-<a href="index.html#about">ABOUT</a>
-<a href="feedback">FEEDBACK</a>
-<a href="creations">CREATIONS</a>
-<a href="whats-new">WHAT’S NEW</a>
-<a href="offer">OFFERS</a>
-<a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
-</nav>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="ALIVE home">
+    <span class="brand-name">ALIVE</span>
+    <span class="brand-sub">FROM SURVIVING TO LIVING</span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="about-final-named">ABOUT</a>
+    <a href="feedback">FEEDBACK</a>
+    <a href="creations">CREATIONS</a>
+    <a href="whats-new">WHAT'S NEW</a>
+    <a href="offer" aria-current="page">OFFERS</a>
+    <a href="begin">BEGIN</a>
+  </nav>
 </header>
 <main class="offer-experience">
 <div class="offer-wrap">
@@ -119,7 +86,7 @@ body.modal-open { overflow:hidden; }
       <div><div class="offer-kicker">DAY 1</div><h2>Rediscover You</h2><p>Reconnect with your energy, interests and the parts of yourself you’ve been missing in everyday expectations.</p><span class="offer-tag">you learn</span></div>
     </article>
     <article class="offer-day">
-      <div><img src="alive_day2_plant_created.png" alt="A flourishing flower in a pot: you grow" loading="lazy"></div>
+      <div><img src="alive_day2_flower_created.png" alt="A flourishing flower in a pot: you grow" loading="lazy"></div>
       <div><div class="offer-kicker">DAY 2</div><h2>Make Life Yours</h2><p>Explore what truly matters to you, envision the life you want and take meaningful steps towards it.</p><span class="offer-tag">you grow</span></div>
     </article>
   </section>
@@ -137,136 +104,24 @@ body.modal-open { overflow:hidden; }
     </div>
   </section>
   <footer class="offer-cta">
-    <button class="offer-join" type="button" id="openBooking">JOIN NOW&nbsp; →</button>
+    <a class="offer-join" href="begin">JOIN NOW&nbsp; →</a>
     <p class="offer-signoff">A little effort from your side, for your own growth.</p>
   </footer>
 </div>
-
-<div class="alive-modal" id="bookingModal" aria-hidden="true">
-  <div class="alive-modal-backdrop" data-close-modal></div>
-  <section class="alive-modal-panel" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
-    <button type="button" class="alive-modal-close" aria-label="Close form" data-close-modal>×</button>
-    <p class="alive-modal-kicker">YOUR ALIVE EXPERIENCE BEGINS HERE</p>
-    <h2 id="bookingTitle">Let’s make this personal.</h2>
-    <p class="alive-modal-intro">Share a few details so I can understand you before we begin.</p>
-    <form id="aliveBookingForm">
-      <div class="alive-form-grid">
-        <label>Full name<input name="name" autocomplete="name" required placeholder="Your full name"></label>
-        <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
-        <label>Phone / WhatsApp<input name="phone" type="tel" autocomplete="tel" required placeholder="+91"></label>
-        <label>What do you currently do?<input name="occupation" required placeholder="Work, study, business…"></label>
-      </div>
-      <label class="alive-why-label">Why do you want to take this experience?
-        <textarea name="why" rows="4" required placeholder="What would you like to reconnect with or change?"></textarea>
-      </label>
-      <div class="alive-payment-summary">
-        <span>Two-Day ALIVE Experience</span><strong>₹2,999</strong>
-      </div>
-      <p class="alive-payment-note">Choose UPI or debit/credit card in the secure Razorpay checkout.</p>
-      <button class="alive-pay-button" type="submit">PAY NOW · ₹2,999</button>
-      <p class="alive-form-status" id="bookingStatus" role="status" aria-live="polite"></p>
-      <p class="alive-privacy-note">Your details will be used to contact you about this experience.</p>
-    </form>
-  </section>
-</div>
-
 </main>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-(function () {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      const opened = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(opened));
+(function(){
+  const toggle=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('.nav');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      const opened=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',String(opened));
     });
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');});
     });
   }
-
-  const modal = document.getElementById('bookingModal');
-  const openButton = document.getElementById('openBooking');
-  const form = document.getElementById('aliveBookingForm');
-  const status = document.getElementById('bookingStatus');
-  const payButton = form.querySelector('button[type="submit"]');
-
-  function openModal() {
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-    setTimeout(() => form.querySelector('input[name="name"]').focus(), 50);
-  }
-  function closeModal() {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-  }
-  openButton.addEventListener('click', openModal);
-  modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
-
-  form.addEventListener('submit', async function (event) {
-    event.preventDefault();
-    status.textContent = '';
-    const details = Object.fromEntries(new FormData(form).entries());
-    payButton.disabled = true;
-    payButton.textContent = 'CONNECTING TO SECURE PAYMENT…';
-    try {
-      // This Netlify Function must be deployed and configured with Razorpay keys.
-      const response = await fetch('/.netlify/functions/create-razorpay-order', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ amount: 299900, currency: 'INR', customer: details })
-      });
-      const data = await response.json();
-      if (!response.ok || !data.orderId || !data.keyId) {
-        throw new Error(data.message || 'Payment setup is not connected yet. Please contact ALIVE to complete your booking.');
-      }
-      const checkout = new Razorpay({
-        key: data.keyId,
-        amount: data.amount || 299900,
-        currency: data.currency || 'INR',
-        name: 'ALIVE with Kratika Songara',
-        description: 'Two-Day ALIVE Experience',
-        order_id: data.orderId,
-        prefill: { name: details.name, email: details.email, contact: details.phone },
-        notes: { occupation: details.occupation, reason_for_joining: details.why },
-        theme: { color: '#8e5141' },
-        handler: async function (payment) {
-          status.textContent = 'Payment received by Razorpay. Please wait while we confirm it…';
-          try {
-            const verify = await fetch('/.netlify/functions/verify-razorpay-payment', {
-              method:'POST', headers:{'Content-Type':'application/json'},
-              body:JSON.stringify({ ...payment, customer: details })
-            });
-            const result = await verify.json();
-            if (!verify.ok || !result.verified) throw new Error(result.message || 'Payment verification is pending.');
-            status.textContent = 'Payment confirmed. Thank you! ALIVE will contact you shortly.';
-            form.reset();
-          } catch (err) {
-            status.textContent = err.message || 'Payment was submitted; verification is pending. Please contact ALIVE.';
-          }
-          payButton.disabled = false;
-          payButton.textContent = 'PAY NOW · ₹2,999';
-        },
-        modal: { ondismiss: function () {
-          payButton.disabled = false;
-          payButton.textContent = 'PAY NOW · ₹2,999';
-          status.textContent = 'Checkout closed. Your details are still here; you can try again.';
-        }}
-      });
-      checkout.open();
-    } catch (error) {
-      status.textContent = error.message || 'Could not start checkout. Please try again later.';
-      payButton.disabled = false;
-      payButton.textContent = 'PAY NOW · ₹2,999';
-    }
-  });
 })();
 </script>
 </body>
