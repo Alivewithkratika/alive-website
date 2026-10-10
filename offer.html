@@ -47,6 +47,23 @@
 .offer-experience .offer-cta{display:block;width:100%;text-align:center;padding:34px 0 0;background:transparent!important;color:var(--alive-brown);border:0;box-shadow:none;border-radius:0;margin:0}
 .offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#e9d1b0,#d5b27d);color:#35231d!important;border:1px solid #c8a16a;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 4px 12px rgba(95,53,41,.08);transition:transform .2s}
 .offer-join:hover{transform:translateY(-2px)}
+/* Registration modal: stays on this page; existing header and offer layout are untouched */
+.alive-modal-backdrop{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(53,35,29,.42);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.alive-modal-backdrop.is-open{display:flex}
+.alive-modal{position:relative;width:min(100%,570px);max-height:calc(100vh - 36px);overflow:auto;background:rgba(255,250,246,.97);border:1px solid rgba(200,161,106,.65);border-radius:24px;padding:28px clamp(20px,5vw,38px);box-shadow:0 24px 80px rgba(53,35,29,.22)}
+.alive-modal-close{position:absolute;right:16px;top:12px;border:0;background:transparent;color:#654237;font-size:28px;cursor:pointer;line-height:1;padding:5px}
+.alive-modal h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,6vw,43px);line-height:1.05;text-align:center;margin:6px 24px 8px;color:var(--alive-brown)}
+.alive-modal-intro{text-align:center;margin:0 0 20px;color:#6f554a;font-size:14px}
+.alive-form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.alive-field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.alive-field.full{grid-column:1/-1}
+.alive-field label{font-size:12px;font-weight:600;color:#654237;letter-spacing:.03em}
+.alive-field input,.alive-field select,.alive-field textarea{width:100%;font:inherit;font-size:14px;color:#35231d;background:#fffdfb;border:1px solid #dfc8ba;border-radius:10px;padding:11px 12px;outline-color:#b87862}
+.alive-field textarea{min-height:78px;resize:vertical}
+.alive-pay-note{text-align:center;font-size:12px;color:#765d50;margin:14px 0 12px}
+.alive-pay-now{display:block;width:100%;border:1px solid #c8a16a;border-radius:50px;padding:13px 20px;background:linear-gradient(135deg,#e9d1b0,#d5b27d);color:#35231d;font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;letter-spacing:.04em;cursor:pointer}
+.alive-form-status{font-size:12px;color:#8e5141;text-align:center;margin:9px 0 0;min-height:1em}
+@media(max-width:520px){.alive-form{grid-template-columns:1fr}.alive-field.full{grid-column:auto}.alive-modal{padding:25px 18px}.alive-modal-backdrop{padding:10px}.alive-modal{max-height:calc(100vh - 20px)}}
 .offer-experience .offer-signoff{font-family:'Allura',cursive;font-size:28px;color:#8e6d51;margin:14px 0 0}
 .offer-experience .offer-copyright{font-size:10px;letter-spacing:.12em;color:#8e6d51;margin:26px 0 0;text-align:center}
 @media(max-width:760px){.offer-experience{padding:18px 14px 38px}.offer-days{grid-template-columns:1fr}.offer-day{grid-template-columns:minmax(110px,.85fr) 1.15fr;padding:16px;min-height:unset}.offer-day img{height:200px}.offer-bonuses{grid-template-columns:1fr}.offer-bonus{padding:17px}.offer-bonus h3{font-size:25px}.offer-price{margin:22px 0}.offer-lead{letter-spacing:.07em}}
@@ -105,14 +122,52 @@
     </div>
   </section>
   <footer class="offer-cta">
-    <a class="offer-join" href="https://razorpay.me/@Alivewithkratika?amount=rUxChLvree1kySW2MNpYVg%3D%3D" target="_blank" rel="noopener noreferrer">JOIN NOW&nbsp; →</a>
+    <a class="offer-join" href="#registration" id="aliveJoinButton" aria-haspopup="dialog" aria-controls="aliveRegistrationModal">JOIN NOW&nbsp; →</a>
     <p class="offer-signoff">A little effort from your side, for your own growth.</p>
     <p class="offer-copyright">© ALIVE WITH KRATIKA SONGARA</p>
   </footer>
 </div>
 </main>
+
+<div class="alive-modal-backdrop" id="aliveRegistrationModal" role="presentation" aria-hidden="true">
+  <section class="alive-modal" role="dialog" aria-modal="true" aria-labelledby="aliveModalTitle">
+    <button type="button" class="alive-modal-close" id="aliveModalClose" aria-label="Close registration form">×</button>
+    <h2 id="aliveModalTitle">Your ALIVE Experience</h2>
+    <p class="alive-modal-intro">Share a few details to begin your registration.</p>
+    <form class="alive-form" id="aliveRegistrationForm">
+      <div class="alive-field"><label for="aliveName">Full name *</label><input id="aliveName" name="name" autocomplete="name" required></div>
+      <div class="alive-field"><label for="aliveEmail">Email address *</label><input id="aliveEmail" name="email" type="email" autocomplete="email" required></div>
+      <div class="alive-field"><label for="alivePhone">Phone / WhatsApp number *</label><input id="alivePhone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="alive-field"><label for="aliveOccupation">Occupation *</label><input id="aliveOccupation" name="occupation" required></div>
+      <div class="alive-field full"><label for="aliveReason">Why would you like to experience ALIVE? *</label><textarea id="aliveReason" name="reason" required></textarea></div>
+      <div class="alive-field full"><label for="aliveGoal">What would you most like to take away from these two days? *</label><textarea id="aliveGoal" name="goal" required></textarea></div>
+      <div class="alive-field full"><label for="aliveContact">Preferred way to contact you *</label><select id="aliveContact" name="preferredContact" required><option value="">Choose one</option><option>Email</option><option>WhatsApp</option><option>Phone call</option></select></div>
+      <div class="alive-field full"><button class="alive-pay-now" type="submit">PAY NOW · ₹2,999</button><p class="alive-pay-note">Next: secure Razorpay checkout. Available options, such as UPI, cards and netbanking, will appear there depending on eligibility.</p><p class="alive-form-status" id="aliveFormStatus" role="status"></p></div>
+    </form>
+  </section>
+</div>
+
 <script>
 (function(){
+  const modal=document.getElementById('aliveRegistrationModal');
+  const join=document.getElementById('aliveJoinButton');
+  const close=document.getElementById('aliveModalClose');
+  const form=document.getElementById('aliveRegistrationForm');
+  const status=document.getElementById('aliveFormStatus');
+  const paymentUrl='https://razorpay.me/@Alivewithkratika?amount=rUxChLvree1kySW2MNpYVg%3D%3D';
+  function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();}
+  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';join.focus();}
+  join.addEventListener('click',openModal);
+  close.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    /* Payment opens only after mandatory fields validate. Email/Google Sheet saving must be connected to a secure form endpoint before launch. */
+    status.textContent='Opening secure payment checkout…';
+    window.location.href=paymentUrl;
+  });
   const toggle=document.querySelector('.menu-toggle');
   const nav=document.querySelector('.nav');
   if(toggle&&nav){
