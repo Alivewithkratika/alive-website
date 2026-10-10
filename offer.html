@@ -142,7 +142,7 @@
       <div class="alive-field full"><label for="aliveReason">Why would you like to experience ALIVE? *</label><textarea id="aliveReason" name="reason" required></textarea></div>
       <div class="alive-field full"><label for="aliveGoal">What would you most like to take away from these two days? *</label><textarea id="aliveGoal" name="goal" required></textarea></div>
       <div class="alive-field full"><label for="aliveContact">Preferred way to contact you *</label><select id="aliveContact" name="preferredContact" required><option value="">Choose one</option><option>Email</option><option>WhatsApp</option><option>Phone call</option></select></div>
-      <div class="alive-field full"><button class="alive-pay-now" type="submit">PAY NOW · ₹2,999</button><p class="alive-pay-note">Next: secure Razorpay checkout. Available options, such as UPI, cards and netbanking, will appear there depending on eligibility.</p><p class="alive-form-status" id="aliveFormStatus" role="status"></p></div>
+      <div class="alive-field full"><button class="alive-pay-now" type="submit">PAY NOW · ₹1</button><p class="alive-pay-note">Next: secure Razorpay checkout. Available options, such as UPI, cards and netbanking, will appear there depending on eligibility.</p><p class="alive-form-status" id="aliveFormStatus" role="status"></p></div>
     </form>
   </section>
 </div>
@@ -154,7 +154,7 @@
   const close=document.getElementById('aliveModalClose');
   const form=document.getElementById('aliveRegistrationForm');
   const status=document.getElementById('aliveFormStatus');
-  const paymentUrl='https://razorpay.me/@Alivewithkratika?amount=rUxChLvree1kySW2MNpYVg%3D%3D';
+  const paymentUrl='Payment of ₹1 requested by KatSong/Hibiscus. Click the link to pay securely via Razorpay: https://razorpay.me/@Alivewithkratika?amount=EPec5evqGoRk2C8icWNJlQ%3D%3D;
   function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();}
   function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';join.focus();}
   join.addEventListener('click',openModal);
