@@ -1087,3 +1087,39 @@ footer div { display: flex; gap: 20px; }
     scroll-behavior: auto;
   }
 }
+
+
+
+/* ABOUT PAGE — FIX PORTRAIT CROPPING ON MOBILE */
+
+@media (max-width: 760px) {
+  .about-hero-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .about-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center top;
+  }
+}
+
+
+
+/* ABOUT PAGE — FIX STORY QUOTE OVERFLOW */
+
+.about-story blockquote {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
