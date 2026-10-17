@@ -1092,8 +1092,11 @@ footer div { display: flex; gap: 20px; }
 
 /* ABOUT PAGE — FIX PORTRAIT CROPPING ON MOBILE */
 
+
 @media (max-width: 760px) {
   .about-hero-image {
+    display: block;
+    width: 100%;
     height: auto;
     min-height: 0;
     aspect-ratio: auto;
@@ -1105,11 +1108,13 @@ footer div { display: flex; gap: 20px; }
     width: 100%;
     height: auto;
     min-height: 0;
+    max-height: none;
     aspect-ratio: auto;
-    object-fit: contain;
-    object-position: center top;
+    object-fit: unset;
+    object-position: center;
   }
 }
+
 
 
 
