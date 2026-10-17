@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>What's New — ALIVE</title>
-
-  <!-- SAME FONTS AS ALIVE HOMEPAGE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- MASTER ALIVE CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2">
-
-  <!-- WHAT'S NEW PAGE ONLY -->
   <style>
-
     .whats-new-page {
       min-height: calc(100vh - 112px);
       padding: 70px 5% 100px;
@@ -30,94 +17,80 @@
       align-items: center;
       justify-content: center;
     }
-
     .news-image-link {
       display: block;
       width: min(900px, 100%);
       transition: transform .25s ease;
     }
+    .news-image-link:hover { transform: translateY(-4px); }
+    .news-image-link img { width: 100%; height: auto; display: block; }
 
-    .news-image-link:hover {
-      transform: translateY(-4px);
-    }
-
-    .news-image-link img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .free-comic-button {
-      display: inline-block;
+    /* Clear, high-contrast button styling */
+    .whats-new-page a.free-comic-button,
+    .whats-new-page a.free-comic-button:link,
+    .whats-new-page a.free-comic-button:visited {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
       margin-top: 28px;
-      padding: 14px 24px;
-      border: 1px solid var(--rose);
-      color: var(--rose-dark);
+      min-height: 52px;
+      padding: 16px 30px;
+      border: 1px solid #9b5b50 !important;
+      border-radius: 4px;
+      background: #9b5b50 !important;
+      color: #fff !important;
       font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      transition: all .2s ease;
-    }
-
-    .free-comic-button:hover {
-      background: var(--rose);
-      color: var(--white);
-    }
-
-    footer {
-      padding: 28px 5%;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: .12em;
       text-align: center;
-      border-top: 1px solid rgba(142,81,65,.14);
-      background: var(--cream-2);
+      text-decoration: none !important;
+      text-transform: uppercase;
+      box-shadow: 0 5px 14px rgba(90, 48, 40, .16);
+      cursor: pointer;
+      transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
-
-    footer p {
-      margin: 0;
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .08em;
-      color: #756562;
+    .whats-new-page a.free-comic-button:hover,
+    .whats-new-page a.free-comic-button:focus-visible {
+      background: #713f37 !important;
+      border-color: #713f37 !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(90, 48, 40, .22);
     }
-
+    .whats-new-page a.free-comic-button:focus-visible {
+      outline: 3px solid rgba(155, 91, 80, .35);
+      outline-offset: 3px;
+    }
     @media (max-width: 760px) {
-
       .whats-new-page {
         min-height: calc(100vh - 82px);
         padding: 45px 6% 70px;
       }
-
-      .news-image-link {
+      .news-image-link { width: 100%; }
+      .whats-new-page a.free-comic-button,
+      .whats-new-page a.free-comic-button:link,
+      .whats-new-page a.free-comic-button:visited {
         width: 100%;
+        max-width: 320px;
+        min-height: 52px;
+        padding: 15px 18px;
+        margin-top: 24px;
       }
-
-      .free-comic-button {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-        padding: 14px 18px;
-      }
-
     }
-
   </style>
-
 </head>
-
 <body>
-
-  <!-- SAME ALIVE HEADER AS HOMEPAGE -->
-
   <header class="site-header">
-
     <a href="index.html" class="brand" aria-label="ALIVE home">
       <span class="brand-name">ALIVE</span>
       <span class="brand-sub">COACHING WITH</span>
       <span class="brand-script">Kratika Songara</span>
     </a>
-
     <button class="menu-toggle" aria-label="Open menu">☰</button>
-
     <nav class="nav">
       <a href="about-final-named">ABOUT</a>
       <a href="feedback">FEEDBACK</a>
@@ -126,65 +99,34 @@
       <a href="offer">OFFERS</a>
       <a href="begin">BEGIN HERE <span aria-hidden="true">→</span></a>
     </nav>
-
   </header>
 
-
-  <!-- WHAT'S NEW -->
-
   <main class="whats-new-page">
-
     <a href="dopamine-monster" class="news-image-link">
-
-      <img
-        src="meownalisa-2.jpg"
-        alt="Ms Meownalisa announces the ALIVE website launch and The Dopamine Monster free comic"
-      >
-
+      <img src="meownalisa-2.jpg" alt="Ms Meownalisa announces the ALIVE website launch and The Dopamine Monster free comic">
     </a>
-
-    <a href="dopamine-monster" class="free-comic-button">
-      GET YOUR FREE COMIC →
-    </a>
-
+    <a href="dopamine-monster" class="free-comic-button">GET YOUR FREE COMIC →</a>
   </main>
 
-
-
-
-  <!-- SAME MOBILE MENU SCRIPT AS HOMEPAGE -->
-
   <script>
-
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
-
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('open'));
+      document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => nav.classList.remove('open'));
       });
-    });
-
+    }
   </script>
 
-
-<footer>
-  <span>© ALIVE WITH KRATIKA SONGARA</span>
-  <div>
-    <a
-      href="https://www.instagram.com/alive_withkratika?stkn=MXM0a2szM2JrZTlwYw=="
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >INSTAGRAM</a>
-    <span class="divider">|</span>
-    <a href="mailto:hello@alivewithkratika.com">EMAIL</a>
-  </div>
-</footer>
-
+  <!-- Let the master stylesheet control the shared footer appearance -->
+  <footer>
+    <span>© ALIVE WITH KRATIKA SONGARA</span>
+    <div>
+      <a href="https://www.instagram.com/alive_withkratika?stkn=MXM0a2szM2JrZTlwYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">INSTAGRAM</a>
+      <span class="divider">|</span>
+      <a href="mailto:hello@alivewithkratika.com">EMAIL</a>
+    </div>
+  </footer>
 </body>
 </html>
