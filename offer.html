@@ -68,6 +68,9 @@
 .offer-experience .offer-copyright{font-size:10px;letter-spacing:.12em;color:#8e6d51;margin:26px 0 0;text-align:center}
 @media(max-width:760px){.offer-experience{padding:18px 14px 38px}.offer-days{grid-template-columns:1fr}.offer-day{grid-template-columns:minmax(110px,.85fr) 1.15fr;padding:16px;min-height:unset}.offer-day img{height:200px}.offer-bonuses{grid-template-columns:1fr}.offer-bonus{padding:17px}.offer-bonus h3{font-size:25px}.offer-price{margin:22px 0}.offer-lead{letter-spacing:.07em}}
 @media(max-width:420px){.offer-day{grid-template-columns:1fr 1.1fr;gap:10px}.offer-day img{height:170px}.offer-day h2{font-size:27px}.offer-day p{font-size:13px}.offer-tag{font-size:15px}.offer-one-on-one{padding:15px}.offer-bonus-stamp{flex-basis:70px;min-width:70px}}
+/* Added only to make the price a clickable registration trigger */
+.offer-price-button{display:inline-block;text-decoration:none;cursor:pointer}
+.offer-price-button:focus-visible{outline:2px solid #8e5141;outline-offset:4px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@
   </section>
   <section class="offer-price">
     <div class="offer-price-small">Founding client offer · First 5 clients</div>
-    <div class="offer-amount">₹2,999</div>
+    <a href="#aliveRegistrationModal" class="offer-amount offer-price-button" id="alivePriceJoinButton" aria-label="Register for the two-day ALIVE Experience for ₹2,999">₹2,999</a>
     <p>For the complete two-day, one-on-one ALIVE Experience.</p>
   </section>
   <section>
@@ -119,7 +122,7 @@
       <article class="offer-bonus"><div class="offer-bonus-top"><div class="offer-bonus-stamp"><div class="offer-bonus-num">01</div><div class="offer-bonus-word">BONUS</div></div><h3>Personal Clarity Call</h3></div><p>A private 20–30 minute conversation before we begin, to understand you, your intentions and what you want from this experience.</p></article>
       <article class="offer-bonus"><div class="offer-bonus-top"><div class="offer-bonus-stamp"><div class="offer-bonus-num">02</div><div class="offer-bonus-word">BONUS</div></div><h3>7-Day Follow-Up Call</h3></div><p>A personal check-in one week later to reflect on your progress, work through obstacles and keep your momentum alive.</p></article>
       <article class="offer-bonus"><div class="offer-bonus-top"><div class="offer-bonus-stamp"><div class="offer-bonus-num">03</div><div class="offer-bonus-word">BONUS</div></div><h3>7-Day ALIVE Action Guide</h3></div><p>A simple, practical guide with daily small actions and reflection methods to help you bring your insights into everyday life.</p></article>
-  
+
     </div>
   </section>
 
@@ -179,17 +182,19 @@
 (function(){
   const modal=document.getElementById('aliveRegistrationModal');
   const join=document.getElementById('aliveJoinButton');
+  const priceJoin=document.getElementById('alivePriceJoinButton');
   const close=document.getElementById('aliveModalClose');
   const form=document.getElementById('aliveRegistrationForm');
   const status=document.getElementById('aliveFormStatus');
   const paymentUrl='https://razorpay.me/@Alivewithkratika?amount=EPec5evqGoRk2C8icWNJlQ%3D%3D';
   function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();}
-  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';join.focus();}
-  join.addEventListener('click',openModal);
-  close.addEventListener('click',closeModal);
+  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(join)join.focus();else if(priceJoin)priceJoin.focus();}
+  if(join)join.addEventListener('click',openModal);
+  if(priceJoin)priceJoin.addEventListener('click',openModal);
+  if(close)close.addEventListener('click',closeModal);
   modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
-  
+
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
