@@ -69,8 +69,30 @@
 @media(max-width:760px){.offer-experience{padding:18px 14px 38px}.offer-days{grid-template-columns:1fr}.offer-day{grid-template-columns:minmax(110px,.85fr) 1.15fr;padding:16px;min-height:unset}.offer-day img{height:200px}.offer-bonuses{grid-template-columns:1fr}.offer-bonus{padding:17px}.offer-bonus h3{font-size:25px}.offer-price{margin:22px 0}.offer-lead{letter-spacing:.07em}}
 @media(max-width:420px){.offer-day{grid-template-columns:1fr 1.1fr;gap:10px}.offer-day img{height:170px}.offer-day h2{font-size:27px}.offer-day p{font-size:13px}.offer-tag{font-size:15px}.offer-one-on-one{padding:15px}.offer-bonus-stamp{flex-basis:70px;min-width:70px}}
 /* Added only to make the price a clickable registration trigger */
-.offer-price-button{display:inline-block;text-decoration:none;cursor:pointer}
-.offer-price-button:focus-visible{outline:2px solid #8e5141;outline-offset:4px;border-radius:4px}
+.offer-price-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 30px;
+  margin:14px 0;
+  color:#fff9f5;
+  background:linear-gradient(135deg,#bd7967 0%,#98513f 100%);
+  border:1px solid #d9a393;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(139,72,56,.22),inset 0 1px 0 rgba(255,255,255,.22);
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+}
+.offer-price-button:hover{
+  color:#fffdfb;
+  filter:brightness(1.04);
+  transform:translateY(-2px);
+  box-shadow:0 9px 20px rgba(139,72,56,.28),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.offer-price-button:active{transform:translateY(0)}
+.offer-price-button:focus-visible{outline:3px solid #d8a08d;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.offer-price-button{transition:none}}
 </style>
 </head>
 <body>
