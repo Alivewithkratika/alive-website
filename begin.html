@@ -42,33 +42,42 @@
     .begin-form .submit:hover { background: var(--brown); border-color: var(--brown); }
     .begin-form .note { text-align: center; color: #91817c; font-family: "DM Sans", sans-serif; font-size: 11px; line-height: 1.7; margin: 18px 0 0; }
 
-    /* Compact shared ALIVE footer */
+    /* Match the existing homepage footer */
     .begin-common-footer {
-      padding: 20px 5% 22px;
-      text-align: center;
-      border-top: 1px solid rgba(142,81,65,.14);
-      background: var(--cream-2);
-      color: #756562;
+      padding: 30px 8% 26px;
+      text-align: left;
+      border-top: 0;
+      background: #754234;
+      color: #f8eee7;
       font-family: "DM Sans", sans-serif;
     }
     .begin-common-footer > span {
       display: block;
-      margin: 0 0 10px;
+      margin: 0 0 24px;
       font-size: 11px;
-      letter-spacing: .08em;
-      line-height: 1.6;
+      letter-spacing: .12em;
+      line-height: 1.7;
+      color: #f8eee7;
     }
     .begin-common-footer > div {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 18px;
       font-size: 11px;
-      letter-spacing: .08em;
+      letter-spacing: .12em;
+      color: #f8eee7;
     }
-    .begin-common-footer a { color: #756562; text-decoration: none; transition: color .2s ease; }
-    .begin-common-footer a:hover, .begin-common-footer a:focus-visible { color: var(--rose-dark); }
+    .begin-common-footer a {
+      color: #f8eee7;
+      text-decoration: none;
+      transition: opacity .2s ease;
+    }
+    .begin-common-footer a:hover,
+    .begin-common-footer a:focus-visible {
+      opacity: .75;
+    }
 
     @media (max-width: 650px) {
       .begin-page { padding: 55px 6% 44px; }
@@ -78,8 +87,8 @@
       .begin-form { padding: 28px 20px; }
       .begin-form .form-grid, .begin-form .choices { grid-template-columns: minmax(0, 1fr); gap: 0; }
       .begin-form .field { margin-bottom: 25px; }
-      .begin-common-footer { padding: 18px 6% 20px; }
-      .begin-common-footer > span { margin-bottom: 9px; }
+      .begin-common-footer { padding: 28px 8% 24px; }
+      .begin-common-footer > span { margin-bottom: 20px; }
     }
   </style>
 </head>
