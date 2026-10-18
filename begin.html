@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2">
   <style>
-    .begin-page { padding: 75px 5% 56px; }
+    .begin-page { padding: 75px 5% 0; }
     .begin-wrap { max-width: 850px; margin: 0 auto; }
     .begin-intro { max-width: 720px; margin: 0 auto 45px; text-align: center; }
     .begin-eyebrow { font-family: "DM Sans", sans-serif; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--rose-dark); margin-bottom: 18px; }
@@ -42,53 +42,14 @@
     .begin-form .submit:hover { background: var(--brown); border-color: var(--brown); }
     .begin-form .note { text-align: center; color: #91817c; font-family: "DM Sans", sans-serif; font-size: 11px; line-height: 1.7; margin: 18px 0 0; }
 
-    /* Match the existing homepage footer */
-    .begin-common-footer {
-      padding: 30px 8% 26px;
-      text-align: left;
-      border-top: 0;
-      background: #754234;
-      color: #f8eee7;
-      font-family: "DM Sans", sans-serif;
-    }
-    .begin-common-footer > span {
-      display: block;
-      margin: 0 0 24px;
-      font-size: 11px;
-      letter-spacing: .12em;
-      line-height: 1.7;
-      color: #f8eee7;
-    }
-    .begin-common-footer > div {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 11px;
-      letter-spacing: .12em;
-      color: #f8eee7;
-    }
-    .begin-common-footer a {
-      color: #f8eee7;
-      text-decoration: none;
-      transition: opacity .2s ease;
-    }
-    .begin-common-footer a:hover,
-    .begin-common-footer a:focus-visible {
-      opacity: .75;
-    }
-
     @media (max-width: 650px) {
-      .begin-page { padding: 55px 6% 44px; }
+      .begin-page { padding: 55px 6% 0; }
       .begin-intro { margin-bottom: 35px; }
       .begin-intro h1 { font-size: 52px; }
       .begin-intro p { font-size: 14px; }
       .begin-form { padding: 28px 20px; }
       .begin-form .form-grid, .begin-form .choices { grid-template-columns: minmax(0, 1fr); gap: 0; }
       .begin-form .field { margin-bottom: 25px; }
-      .begin-common-footer { padding: 28px 8% 24px; }
-      .begin-common-footer > span { margin-bottom: 20px; }
     }
   </style>
 </head>
@@ -177,7 +138,7 @@
     }
   </script>
 
-  <footer class="begin-common-footer">
+  <footer>
     <span>© ALIVE WITH KRATIKA SONGARA</span>
     <div>
       <a href="https://www.instagram.com/alive_withkratika?stkn=MXM0a2szM2JrZTlwYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">INSTAGRAM</a>
