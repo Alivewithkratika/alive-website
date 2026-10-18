@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,261 +12,136 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Begin Here — ALIVE with Kratika Songara</title>
   <meta name="description" content="A little about you, where you are right now, and what you want to feel differently.">
 
-  <!-- SAME FONTS AS THE ALIVE HOMEPAGE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&family=Allura&display=swap" rel="stylesheet">
-
-  <!-- MASTER ALIVE STYLESHEET -->
   <link rel="stylesheet" href="style.css?v=2">
 
-  <!-- BEGIN HERE PAGE ONLY -->
   <style>
-    .begin-page {
-      padding: 75px 5% 90px;
-    }
-
-    .begin-wrap {
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    .begin-intro {
-      max-width: 720px;
-      margin: 0 auto 45px;
-      text-align: center;
-    }
-
+    .begin-page { padding: 75px 5% 90px; }
+    .begin-wrap { max-width: 850px; margin: 0 auto; }
+    .begin-intro { max-width: 720px; margin: 0 auto 45px; text-align: center; }
     .begin-eyebrow {
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
-      margin-bottom: 18px;
+      font-family: "DM Sans", sans-serif; font-size: 11px; letter-spacing: .24em;
+      text-transform: uppercase; color: var(--rose-dark); margin-bottom: 18px;
     }
-
     .begin-intro h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 7vw, 76px);
-      font-weight: 400;
-      line-height: 1;
-      color: var(--brown);
-      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", serif; font-size: clamp(48px, 7vw, 76px);
+      font-weight: 400; line-height: 1; color: var(--brown); margin: 0 0 18px;
     }
-
-    .begin-ornament {
-      color: var(--rose);
-      font-size: 20px;
-      margin: 18px 0;
-    }
-
+    .begin-ornament { color: var(--rose); font-size: 20px; margin: 18px 0; }
     .begin-intro p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-family: "DM Sans", sans-serif;
-      font-size: 15px;
-      line-height: 1.9;
-      color: #756562;
+      max-width: 600px; margin: 0 auto; font-family: "DM Sans", sans-serif;
+      font-size: 15px; line-height: 1.9; color: #756562;
     }
-
     .begin-form {
-      background: var(--cream-2);
-      border: 1px solid rgba(142,81,65,.16);
-      box-shadow: 0 18px 50px rgba(53,35,29,.05);
-      padding: clamp(25px, 5vw, 52px);
+      background: var(--cream-2); border: 1px solid rgba(142,81,65,.16);
+      box-shadow: 0 18px 50px rgba(53,35,29,.05); padding: clamp(25px, 5vw, 52px);
     }
-
-    .begin-form .field {
-      margin: 0 0 29px;
-      min-width: 0;
+    .begin-form .field { margin: 0 0 29px; min-width: 0; }
+    .begin-form label, .begin-form legend {
+      display: block; font-family: "DM Sans", sans-serif; font-size: 11px;
+      font-weight: 500; letter-spacing: .09em; text-transform: uppercase;
+      margin-bottom: 10px; color: var(--brown);
     }
-
-    .begin-form label,
-    .begin-form legend {
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: var(--brown);
-    }
-
     .begin-form .hint {
-      font-family: "DM Sans", sans-serif;
-      color: #8a7b76;
-      font-size: 12px;
-      line-height: 1.6;
-      margin: -2px 0 12px;
+      font-family: "DM Sans", sans-serif; color: #8a7b76; font-size: 12px;
+      line-height: 1.6; margin: -2px 0 12px;
     }
-
-    .begin-form input:not([type="checkbox"]),
-    .begin-form textarea {
-      width: 100%;
-      max-width: 100%;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      background: transparent;
-      padding: 12px 2px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--brown);
-      outline: none;
-      border-radius: 0;
+    .begin-form input:not([type="checkbox"]), .begin-form textarea {
+      width: 100%; max-width: 100%; border: 0; border-bottom: 1px solid var(--line);
+      background: transparent; padding: 12px 2px; font-family: "DM Sans", sans-serif;
+      font-size: 15px; line-height: 1.6; color: var(--brown); outline: none; border-radius: 0;
     }
-
-    .begin-form input:focus,
-    .begin-form textarea:focus {
-      border-bottom-color: var(--rose);
-    }
-
-    .begin-form input::placeholder,
-    .begin-form textarea::placeholder {
-      color: #a18e86;
-      opacity: 1;
-    }
-
-    .begin-form textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
+    .begin-form input:focus, .begin-form textarea:focus { border-bottom-color: var(--rose); }
+    .begin-form input::placeholder, .begin-form textarea::placeholder { color: #a18e86; opacity: 1; }
+    .begin-form textarea { min-height: 100px; resize: vertical; }
     .begin-form .form-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 24px;
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px;
     }
-
-    .begin-form fieldset {
-      border: 0;
-      padding: 0;
-      min-width: 0;
-    }
-
-    .begin-form .choices {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 20px;
-    }
-
+    .begin-form fieldset { border: 0; padding: 0; min-width: 0; }
+    .begin-form .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
     .begin-form .choice {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1.6;
-      letter-spacing: 0;
-      text-transform: none;
-      color: #756562;
-      margin: 0;
-      padding: 7px 0;
-      cursor: pointer;
+      display: flex; align-items: flex-start; gap: 10px; font-family: "DM Sans", sans-serif;
+      font-size: 13px; font-weight: 400; line-height: 1.6; letter-spacing: 0;
+      text-transform: none; color: #756562; margin: 0; padding: 7px 0; cursor: pointer;
     }
-
     .begin-form .choice input[type="checkbox"] {
-      flex: 0 0 15px;
-      width: 15px;
-      height: 15px;
-      margin: 3px 0 0;
-      padding: 0;
+      flex: 0 0 15px; width: 15px; height: 15px; margin: 3px 0 0; padding: 0;
       accent-color: var(--rose-dark);
     }
-
     .begin-form .submit {
-      width: 100%;
-      border: 1px solid var(--rose-dark);
-      background: var(--rose-dark);
-      color: white;
-      padding: 16px 24px;
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      margin-top: 4px;
-      transition: background .2s ease, color .2s ease;
+      width: 100%; border: 1px solid var(--rose-dark); background: var(--rose-dark);
+      color: white; padding: 16px 24px; font-family: "DM Sans", sans-serif;
+      font-size: 11px; letter-spacing: .15em; text-transform: uppercase; cursor: pointer;
+      margin-top: 4px; transition: background .2s ease, color .2s ease;
     }
-
-    .begin-form .submit:hover {
-      background: var(--brown);
-      border-color: var(--brown);
-    }
-
+    .begin-form .submit:hover { background: var(--brown); border-color: var(--brown); }
     .begin-form .note {
-      text-align: center;
-      color: #91817c;
-      font-family: "DM Sans", sans-serif;
-      font-size: 11px;
-      line-height: 1.7;
-      margin: 18px 0 0;
+      text-align: center; color: #91817c; font-family: "DM Sans", sans-serif;
+      font-size: 11px; line-height: 1.7; margin: 18px 0 0;
     }
 
-    .begin-footer {
+    /* Common ALIVE footer */
+    .begin-common-footer {
+      padding: 28px 5%;
       text-align: center;
-      color: #a18e86;
+      border-top: 1px solid rgba(142,81,65,.14);
+      background: var(--cream-2);
+      color: #756562;
       font-family: "DM Sans", sans-serif;
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-top: 32px;
     }
+    .begin-common-footer > span {
+      display: block;
+      margin: 0 0 18px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      line-height: 1.8;
+    }
+    .begin-common-footer > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: .08em;
+    }
+    .begin-common-footer a {
+      color: #756562;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .begin-common-footer a:hover,
+    .begin-common-footer a:focus-visible { color: var(--rose-dark); }
 
     @media (max-width: 650px) {
-      .begin-page {
-        padding: 55px 6% 70px;
+      .begin-page { padding: 55px 6% 70px; }
+      .begin-intro { margin-bottom: 35px; }
+      .begin-intro h1 { font-size: 52px; }
+      .begin-intro p { font-size: 14px; }
+      .begin-form { padding: 28px 20px; }
+      .begin-form .form-grid, .begin-form .choices {
+        grid-template-columns: minmax(0, 1fr); gap: 0;
       }
-
-      .begin-intro {
-        margin-bottom: 35px;
-      }
-
-      .begin-intro h1 {
-        font-size: 52px;
-      }
-
-      .begin-intro p {
-        font-size: 14px;
-      }
-
-      .begin-form {
-        padding: 28px 20px;
-      }
-
-      .begin-form .form-grid,
-      .begin-form .choices {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 0;
-      }
-
-      .begin-form .field {
-        margin-bottom: 25px;
-      }
+      .begin-form .field { margin-bottom: 25px; }
+      .begin-common-footer { padding: 26px 6%; }
+      .begin-common-footer > div { gap: 12px; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- SAME HEADER AND NAVIGATION AS INDEX -->
   <header class="site-header">
     <a href="index.html" class="brand" aria-label="ALIVE home">
       <span class="brand-name">ALIVE</span>
       <span class="brand-sub">COACHING WITH</span>
       <span class="brand-script">Kratika Songara</span>
     </a>
-
-    <button class="menu-toggle" aria-label="Open menu"
-      aria-expanded="false" type="button">☰</button>
-
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
     <nav class="nav">
       <a href="about-final-named">ABOUT</a>
       <a href="feedback">FEEDBACK</a>
@@ -280,7 +154,6 @@
 
   <main class="begin-page">
     <div class="begin-wrap">
-
       <section class="begin-intro">
         <div class="begin-eyebrow">A first step</div>
         <h1>Let’s begin with you.</h1>
@@ -291,17 +164,11 @@
         </p>
       </section>
 
-      <form class="begin-form" name="alive-intake" method="POST"
-        action="https://formsubmit.co/alive.withkratika@gmail.com">
-
-        
-<input type="hidden" name="_next"
-  value="https://alivewithkratika.github.io/alive-website/thank-you.html">
-
+      <form class="begin-form" name="alive-intake" method="POST" action="https://formsubmit.co/alive.withkratika@gmail.com">
+        <input type="hidden" name="_next" value="https://alivewithkratika.github.io/alive-website/thank-you.html">
         <input type="hidden" name="_subject" value="✨ New ALIVE enquiry">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="true">
-
         <p style="display:none">
           <label>Don’t fill this out if you’re human:
             <input name="bot-field">
@@ -313,7 +180,6 @@
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
           </div>
-
           <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
@@ -325,11 +191,9 @@
             <label for="phone">Phone / WhatsApp</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel">
           </div>
-
           <div class="field">
             <label for="work">What do you currently do?</label>
-            <input id="work" name="work" type="text"
-              placeholder="Work, business, studies, homemaker, etc.">
+            <input id="work" name="work" type="text" placeholder="Work, business, studies, homemaker, etc.">
           </div>
         </div>
 
@@ -341,38 +205,15 @@
         <fieldset class="field">
           <legend>Which words describe where you are right now?</legend>
           <div class="hint">Choose as many as feel true.</div>
-
           <div class="choices">
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="stuck"> Stuck
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="drained"> Drained
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="disconnected">
-              Disconnected from myself
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="unfulfilled">
-              Unfulfilled
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="overwhelmed">
-              Overwhelmed
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="lost-spark">
-              I’ve lost my spark
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="ready">
-              Ready for change
-            </label>
-            <label class="choice">
-              <input type="checkbox" name="current-state" value="other">
-              Something else
-            </label>
+            <label class="choice"><input type="checkbox" name="current-state" value="stuck"> Stuck</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="drained"> Drained</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="disconnected"> Disconnected from myself</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="unfulfilled"> Unfulfilled</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="overwhelmed"> Overwhelmed</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="lost-spark"> I’ve lost my spark</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="ready"> Ready for change</label>
+            <label class="choice"><input type="checkbox" name="current-state" value="other"> Something else</label>
           </div>
         </fieldset>
 
@@ -380,54 +221,47 @@
           <label for="feel">What feels different from how you’d like your life to feel?</label>
           <textarea id="feel" name="feel"></textarea>
         </div>
-
         <div class="field">
           <label for="dream">If things changed, what would you love your life to feel like?</label>
-          <textarea id="dream" name="dream"
-            placeholder="You can keep this simple — a few words are enough."></textarea>
+          <textarea id="dream" name="dream" placeholder="You can keep this simple — a few words are enough."></textarea>
         </div>
-
         <div class="field">
           <label for="anything">Is there anything you particularly want me to know before we speak?</label>
           <textarea id="anything" name="anything"></textarea>
         </div>
 
         <button class="submit" type="submit">Send &amp; Begin</button>
-
-        <p class="note">
-          Your answers are simply a starting point for our conversation.
-        </p>
+        <p class="note">Your answers are simply a starting point for our conversation.</p>
       </form>
-
-      <div class="begin-footer">
-        ALIVE with Kratika Songara · From Surviving to Living
-      </div>
-
     </div>
   </main>
 
-  <!-- SAME MOBILE MENU BEHAVIOUR AS INDEX -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute(
-        'aria-label',
-        isOpen ? 'Close menu' : 'Open menu'
-      );
-    });
-
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
       });
-    });
+      document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
   </script>
 
+  <footer class="begin-common-footer">
+    <span>© ALIVE WITH KRATIKA SONGARA</span>
+    <div>
+      <a href="https://www.instagram.com/alive_withkratika?stkn=MXM0a2szM2JrZTlwYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">INSTAGRAM</a>
+      <span class="divider">|</span>
+      <a href="mailto:hello@alivewithkratika.com">EMAIL</a>
+    </div>
+  </footer>
 </body>
 </html>
