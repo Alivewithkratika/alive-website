@@ -2,7 +2,6 @@
   "name": "alive-payment-api",
   "version": "1.0.0",
   "private": true,
-  "description": "Secure payment backend for the ALIVE Experience",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
