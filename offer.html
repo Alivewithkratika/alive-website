@@ -45,8 +45,8 @@
 .offer-bonus h3{font-size:25px;margin:0}
 .offer-bonus p{font-size:14px;margin:0}
 .offer-experience .offer-cta{display:block;width:100%;text-align:center;padding:34px 0 0;background:transparent!important;color:var(--alive-brown);border:0;box-shadow:none;border-radius:0;margin:0}
-.offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#e9d1b0,#d5b27d);color:#35231d!important;border:1px solid #c8a16a;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 4px 12px rgba(95,53,41,.08);transition:transform .2s}
-.offer-join:hover{transform:translateY(-2px)}
+.offer-join{display:inline-block;text-decoration:none!important;background:linear-gradient(135deg,#bd7967 0%,#98513f 100%);color:#fff9f5!important;border:1px solid #d9a393;border-radius:50px;padding:15px 55px;font-family:'Cormorant Garamond',serif;font-size:27px;letter-spacing:.08em;box-shadow:0 6px 16px rgba(139,72,56,.22),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .2s,box-shadow .2s,filter .2s}
+.offer-join:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 9px 20px rgba(139,72,56,.28),inset 0 1px 0 rgba(255,255,255,.25)}
 /* Registration modal: stays on this page; existing header and offer layout are untouched */
 .alive-modal-backdrop{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(53,35,29,.42);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
 .alive-modal-backdrop.is-open{display:flex}
@@ -209,7 +209,10 @@
   const close=document.getElementById('aliveModalClose');
   const form=document.getElementById('aliveRegistrationForm');
   const status=document.getElementById('aliveFormStatus');
-  function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();}
+  const API_URL='https://script.google.com/macros/s/AKfycbz_VuBOuQk6du3wb2dRyIf020MWLgUyicE4ncH0jzQugnqmZFqP4bAPyJYrPLz7Ax8j/exec';
+  let warmed=false;
+  function warmUp(){if(warmed)return;warmed=true;try{fetch(API_URL,{method:'GET',mode:'no-cors'});}catch(e){}}
+  function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();warmUp();}
   function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(join)join.focus();else if(priceJoin)priceJoin.focus();}
   if(join)join.addEventListener('click',openModal);
   if(priceJoin)priceJoin.addEventListener('click',openModal);
@@ -222,7 +225,9 @@ form.addEventListener('submit', async function(event) {
   if (!form.reportValidity()) return;
 
   const button = form.querySelector('.alive-pay-now');
+  const originalLabel = button.textContent;
   button.disabled = true;
+  button.textContent = 'Please wait…';
   status.textContent = 'Preparing your secure payment…';
 
   const data = {
@@ -239,7 +244,7 @@ form.addEventListener('submit', async function(event) {
 
   try {
     const res = await fetch(
-      'https://script.google.com/macros/s/AKfycbz_VuBOuQk6du3wb2dRyIf020MWLgUyicE4ncH0jzQugnqmZFqP4bAPyJYrPLz7Ax8j/exec',
+      API_URL,
       {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -261,24 +266,30 @@ form.addEventListener('submit', async function(event) {
       // Thank-you message only. Saving to the sheet and the emails are done
       // by the server after Razorpay confirms the payment.
       handler: function () {
+        // Show a thank-you inside the same popup instead of the empty form
         form.reset();
-        status.textContent = 'Payment received! Your confirmation email is on its way (please check spam too).';
+        form.style.display = 'none';
+        document.getElementById('aliveModalTitle').textContent = 'Thank you!';
+        const intro = modal.querySelector('.alive-modal-intro');
+        intro.textContent = 'Your payment has been received and your registration is confirmed. A confirmation email is on its way to you (please check your spam folder too). We will be in touch with you soon.';
+        intro.style.fontSize = '16px';
+        intro.style.margin = '14px 0 8px';
       },
       modal: {
         ondismiss: function () {
-          button.disabled = false;
+          button.disabled = false; button.textContent = originalLabel;
           status.textContent = 'Payment not completed. You can try again.';
         }
       }
     });
     rzp.on('payment.failed', function () {
-      button.disabled = false;
+      button.disabled = false; button.textContent = originalLabel;
       status.textContent = 'Payment failed. Please try again.';
     });
     rzp.open();
     status.textContent = '';
   } catch (error) {
-    button.disabled = false;
+    button.disabled = false; button.textContent = originalLabel;
     status.textContent = error.message || 'We could not start the payment. Please try again.';
   }
 });
