@@ -200,6 +200,7 @@
   </section>
 </div>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 (function(){
   const modal=document.getElementById('aliveRegistrationModal');
@@ -208,7 +209,6 @@
   const close=document.getElementById('aliveModalClose');
   const form=document.getElementById('aliveRegistrationForm');
   const status=document.getElementById('aliveFormStatus');
-  const paymentUrl='https://razorpay.me/@Alivewithkratika?amount=EPec5evqGoRk2C8icWNJlQ%3D%3D';
   function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();}
   function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(join)join.focus();else if(priceJoin)priceJoin.focus();}
   if(join)join.addEventListener('click',openModal);
@@ -219,14 +219,15 @@
 
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
-
   if (!form.reportValidity()) return;
 
   const button = form.querySelector('.alive-pay-now');
   button.disabled = true;
-  status.textContent = 'Saving your registration details…';
+  status.textContent = 'Preparing your secure payment…';
 
   const data = {
+    action: 'create_order',
+    course: 'main',
     name: form.elements.name.value.trim(),
     email: form.elements.email.value.trim(),
     phone: form.elements.phone.value.trim(),
@@ -237,27 +238,48 @@ form.addEventListener('submit', async function(event) {
   };
 
   try {
-    await fetch(
+    const res = await fetch(
       'https://script.google.com/macros/s/AKfycbz_VuBOuQk6du3wb2dRyIf020MWLgUyicE4ncH0jzQugnqmZFqP4bAPyJYrPLz7Ax8j/exec',
       {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(data)
       }
     );
+    const order = await res.json();
+    if (!order.ok) throw new Error(order.error || 'Could not start payment.');
 
-    status.textContent =
-      'Details submitted. Please continue to payment.';
-
-    window.location.href = paymentUrl;
-
+    const rzp = new Razorpay({
+      key: order.keyId,
+      order_id: order.orderId,
+      amount: order.amount,
+      currency: order.currency,
+      name: 'ALIVE with Kratika Songara',
+      description: 'Two-Day ALIVE Experience',
+      prefill: { name: data.name, email: data.email, contact: data.phone },
+      theme: { color: '#b87862' },
+      // Thank-you message only. Saving to the sheet and the emails are done
+      // by the server after Razorpay confirms the payment.
+      handler: function () {
+        form.reset();
+        status.textContent = 'Payment received! Your confirmation email is on its way (please check spam too).';
+      },
+      modal: {
+        ondismiss: function () {
+          button.disabled = false;
+          status.textContent = 'Payment not completed. You can try again.';
+        }
+      }
+    });
+    rzp.on('payment.failed', function () {
+      button.disabled = false;
+      status.textContent = 'Payment failed. Please try again.';
+    });
+    rzp.open();
+    status.textContent = '';
   } catch (error) {
     button.disabled = false;
-    status.textContent =
-      'We could not submit your details. Please try again.';
+    status.textContent = error.message || 'We could not start the payment. Please try again.';
   }
 });
 
