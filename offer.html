@@ -209,7 +209,7 @@
   const close=document.getElementById('aliveModalClose');
   const form=document.getElementById('aliveRegistrationForm');
   const status=document.getElementById('aliveFormStatus');
-  const API_URL='https://script.google.com/macros/s/AKfycbz_VuBOuQk6du3wb2dRyIf020MWLgUyicE4ncH0jzQugnqmZFqP4bAPyJYrPLz7Ax8j/exec';
+  const API_URL='https://script.google.com/macros/s/AKfycbxcN3oZvupKFdOGlCi3bvXrxkNSAt9343TbZLsrvf37SYs2ieZx8w3Wjm0Br5tZF2UL/exec';
   let warmed=false;
   function warmUp(){if(warmed)return;warmed=true;try{fetch(API_URL,{method:'GET',mode:'no-cors'});}catch(e){}}
   function openModal(event){if(event)event.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('aliveName').focus();warmUp();}
