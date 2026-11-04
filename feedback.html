@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +48,7 @@
       margin: 0;
     }
 
-    .feedback-hero h1 span {
-      color: var(--rose-dark);
-    }
+    .feedback-hero h1 span { color: var(--rose-dark); }
 
     .feedback-intro {
       max-width: 600px;
@@ -73,6 +70,12 @@
       margin-bottom: 24px;
       background: var(--cream-2);
       border: 1px solid rgba(142,81,65,.14);
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .feedback-card.is-open {
+      border-color: rgba(142,81,65,.32);
+      box-shadow: 0 18px 40px -26px rgba(142,81,65,.45);
     }
 
     .feedback-card .quote-heading {
@@ -84,15 +87,8 @@
       margin: 0 0 20px;
     }
 
-    .feedback-card .quote-heading::before {
-      content: "“";
-      color: var(--rose);
-    }
-
-    .feedback-card .quote-heading::after {
-      content: "”";
-      color: var(--rose);
-    }
+    .feedback-card .quote-heading::before { content: "“"; color: var(--rose); }
+    .feedback-card .quote-heading::after  { content: "”"; color: var(--rose); }
 
     .feedback-card p {
       font-family: "DM Sans", sans-serif;
@@ -106,6 +102,74 @@
       color: var(--brown);
       font-weight: 500;
     }
+
+    /* Important words, softly marked */
+    .feedback-card .hl {
+      color: var(--brown);
+      font-weight: 500;
+      background: linear-gradient(transparent 62%, rgba(214,160,140,.38) 62%);
+      padding: 0 2px;
+    }
+
+    /* Key line pulled out of a long feedback */
+    .feedback-card .pull {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--rose-dark);
+      border-left: 2px solid var(--rose);
+      padding: 2px 0 2px 20px;
+      margin: 26px 0 22px;
+    }
+
+    /* Full feedback (hidden until opened) */
+    .feedback-full { display: none; }
+    .feedback-card.is-open .feedback-full {
+      display: block;
+      animation: fbReveal .45s ease both;
+    }
+    .feedback-card.is-open .feedback-short { display: none; }
+
+    .feedback-full .fb-lead {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      line-height: 1.4;
+      color: var(--brown);
+      margin-bottom: 22px;
+    }
+
+    .feedback-full .fb-sign {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      color: var(--rose-dark);
+      margin-top: 26px;
+    }
+
+    @keyframes fbReveal {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Read more button */
+    .read-more {
+      appearance: none;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid var(--rose-dark);
+      padding: 0 0 4px;
+      margin-top: 8px;
+      cursor: pointer;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .read-more:hover { color: var(--brown); border-color: var(--brown); }
+    .read-more:focus-visible { outline: 2px solid var(--rose-dark); outline-offset: 5px; }
 
     .feedback-card .by {
       margin-top: 25px;
@@ -141,47 +205,24 @@
       margin: 0;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .feedback-card.is-open .feedback-full { animation: none; }
+      .feedback-card, .read-more { transition: none; }
+    }
+
     @media (max-width: 760px) {
-      .feedback-page {
-        padding: 0 6%;
-      }
-
-      .feedback-hero {
-        padding: 60px 0 42px;
-      }
-
-      .feedback-hero h1 {
-        font-size: 54px;
-      }
-
-      .feedback-intro {
-        font-size: 14px;
-      }
-
-      .feedback-list {
-        padding-bottom: 60px;
-      }
-
-      .feedback-card {
-        padding: 30px 23px;
-        margin-bottom: 18px;
-      }
-
-      .feedback-card .quote-heading {
-        font-size: 32px;
-      }
-
-      .feedback-card p {
-        font-size: 13px;
-      }
-
-      .feedback-closing {
-        padding: 65px 7%;
-      }
-
-      .feedback-closing h2 {
-        font-size: 48px;
-      }
+      .feedback-page { padding: 0 6%; }
+      .feedback-hero { padding: 60px 0 42px; }
+      .feedback-hero h1 { font-size: 54px; }
+      .feedback-intro { font-size: 14px; }
+      .feedback-list { padding-bottom: 60px; }
+      .feedback-card { padding: 30px 23px; margin-bottom: 18px; }
+      .feedback-card .quote-heading { font-size: 32px; }
+      .feedback-card p { font-size: 13px; }
+      .feedback-card .pull { font-size: 22px; padding-left: 16px; }
+      .feedback-full .fb-lead { font-size: 22px; }
+      .feedback-closing { padding: 65px 7%; }
+      .feedback-closing h2 { font-size: 48px; }
     }
   </style>
 </head>
@@ -209,16 +250,12 @@
     </nav>
   </header>
 
-
-
-
-
   <!-- FEEDBACK CONTENT -->
   <main class="feedback-page">
 
     <section class="feedback-hero">
       <div class="feedback-eyebrow">Real words</div>
-      <h1>What people <span>say.</span></h1>
+      <h1>What people say.</h1>
       <p class="feedback-intro">
         Every conversation is an opportunity to pause, reflect
         and see things from a new perspective. Here are a few
@@ -228,11 +265,247 @@
 
     <section class="feedback-list" aria-label="Testimonials">
 
-      <!-- TESTIMONIAL 1 -->
+      <!-- ============================================================
+           TESTIMONIAL — THE LETTER (full feedback available)
+           ============================================================ -->
       <article class="feedback-card">
-        <h2 class="quote-heading">
-          I genuinely felt heard and understood.
-        </h2>
+        <h2 class="quote-heading">You helped me find myself again.</h2>
+
+        <!-- SHORT VERSION -->
+        <div class="feedback-short">
+          <p>
+            I came to Goa during one of the darkest phases of my life.
+            I had almost forgotten what happiness felt like.
+            And then, I met you.
+          </p>
+
+          <p>
+            You made me realise that maybe life could be beautiful again.
+            That I didn’t have to live my life according to anyone else’s expectations.
+            I could choose my own path.
+          </p>
+
+          <p class="pull">
+            “Even today, I tell people that you were the first person
+            who showed me the colours of life.”
+          </p>
+
+          <p>
+            Today, when I look back at the last five years, I realise that they have been
+            some of the best years of my life. I have become happier,
+            healthier, more confident, and more open to life.
+          </p>
+
+          <button class="read-more" type="button" aria-expanded="false">Read the full letter</button>
+        </div>
+
+        <!-- FULL VERSION -->
+        <div class="feedback-full">
+          <p class="fb-lead">Dear Kratika…..</p>
+
+          <p>
+            You will always be one of the most influential people in my life. And I don’t think you truly
+            know how much of an impact you have had on me. So, let me take you a little back in time.
+          </p>
+
+          <p>
+            Exactly five years ago, around this very time, I met you for the first time when I came to Goa
+            on my very first solo trip. I didn’t know you personally. You were my best friend’s sister-in-law
+            and honestly, I was a little hesitant at first. But Kratika, the way you welcomed me, the way you met me,
+            and the vibe you gave me instantly… it was a BIG WOW!
+          </p>
+
+          <p>
+            Eventually, you gave me a place in your home, your time, your company, and your love.
+            You took me around Goa, showed me beautiful places, and made sure I felt comfortable,
+            even though you barely knew me.
+          </p>
+
+          <p>But what you didn’t know was what I was going through at that time.</p>
+
+          <p>
+            I had come to Goa during one of the <strong>darkest phases of my life</strong>. I was carrying a trauma
+            that had broken everything inside me. I had a hopeless, broken heart and honestly, I had reached a point
+            where I had almost forgotten what happiness felt like. I didn’t know how to be happy anymore.
+            I was just trying to get through life.
+          </p>
+
+          <p>And then, I met YOU.</p>
+
+          <p>
+            You, with your full-of-life personality. Your fearless attitude. Your incredible communication skills.
+            Your contagious laughter. Your ability to talk to people, connect with them and just live life so freely.
+          </p>
+
+          <p>
+            I remember being so amazed by you. I used to look at you and wonder how someone could be so full of life,
+            so confident, so carefree, and so unapologetically themselves.
+          </p>
+
+          <p>
+            You made me realise that maybe <strong>life could be beautiful again</strong>. That maybe there was still
+            so much to experience, so much to explore, and so much happiness waiting for me. You showed me that I
+            didn’t have to live my life according to anyone else’s expectations. I could choose my own path.
+            I could travel, laugh, explore, make mistakes, and live life on MY terms.
+          </p>
+
+          <p class="pull">
+            “And Kratika, even today, I tell people that you were the first person who showed me the colours of life.”
+          </p>
+
+          <p>
+            You may think you were just being yourself. You may think you were just being a good host, a good person
+            or a good friend. But for me, you were so much more than that. You were a glimpse of the life I didn’t
+            even know I could have.
+          </p>
+
+          <p>And the most beautiful part? You did all of this without even knowing how much I needed it.</p>
+
+          <p>
+            You gave me so much warmth and love that I started thinking, “Yaar, what can I do for Kratika?
+            How can I make her feel as special as she makes me feel?”
+          </p>
+
+          <p>And at that time, I knew only one thing… I could cook! 😂❤️</p>
+
+          <p>
+            So I started cooking for you. And mannn, the way you accepted it, the way you appreciated it,
+            and the way you made me feel proud of something I did… you made me believe in myself in a completely
+            different way.
+          </p>
+
+          <p>
+            You made me feel that I was good at something. That I could create something that made other people happy.
+            That I had something valuable to offer, too.
+          </p>
+
+          <p>
+            I will never forget how generously we cooked for the restaurant staff and shared our food with them.
+            Those little moments might have seemed ordinary, but for me, they were precious. They were moments when
+            I felt alive, happy, connected, and full of love.
+          </p>
+
+          <p>
+            Looking back, I realise that I wasn’t just cooking food for you. Somewhere along the way, I was also
+            finding little pieces of myself again.
+          </p>
+
+          <p>And Kratika, that is the impact you have had on my life.</p>
+
+          <p><strong>You helped me find myself again.</strong></p>
+
+          <p>
+            Today, when I look back at the last five years, I realise that they have been some of the best years
+            of my life. I have become happier, healthier, more confident, and more open to life. I have experienced
+            things I might never have experienced otherwise. I have travelled, explored, laughed, taken chances,
+            and slowly learned to live life on my own terms.
+          </p>
+
+          <p>
+            And a part of that person I am today will always belong to the girl who met you in Goa five years ago.
+          </p>
+
+          <p>
+            I wish you could see yourself through my eyes, Kratika. I wish you could understand how much goodness
+            you bring into people's lives simply by being who you are.
+          </p>
+
+          <p>
+            The world often talks about people who achieve great things, who build successful careers, or who make
+            a lot of money. But I think there is another kind of greatness that deserves just as much recognition….
+            the ability to change someone's life simply through the way you treat them.
+          </p>
+
+          <p>And you have done that for me.</p>
+
+          <p>
+            You didn’t give me a lecture about how to live. You didn’t sit me down and tell me how to heal.
+            You didn’t even know how broken I was.
+          </p>
+
+          <p>
+            You simply welcomed me into your home, shared your time with me, laughed with me, showed me around,
+            and let me experience life through your eyes.
+          </p>
+
+          <p>And somehow, that was enough to change so much.</p>
+
+          <p>
+            Thank you for being you, Kratika. Thank you for opening your home and your heart to me five years ago.
+            Thank you for making a stranger feel like she belonged. Thank you for all the laughter, the food,
+            the memories, the warmth, and the countless little moments that have stayed with me all these years.
+          </p>
+
+          <p>
+            Most importantly, thank you for entering my life at a time when I needed a reminder that life could
+            still be beautiful.
+          </p>
+
+          <p>
+            You may never fully understand how much that meant to me, but I hope this letter gives you even a tiny
+            glimpse of it.
+          </p>
+
+          <p>
+            If I could go back in time and meet that broken version of myself five years ago, I would tell her that
+            things are going to get better. That she is going to discover a beautiful life waiting for her.
+          </p>
+
+          <p>
+            And I would tell her that, somewhere along the way, she is going to meet a woman named Kratika who will
+            unknowingly become one of the most influential people in her life.
+          </p>
+
+          <p>
+            Someone who will remind her how to laugh, how to live, how to dream, and how to be herself again.
+          </p>
+
+          <p>
+            Five years ago, I came to Goa looking for a little escape from my life. I had no idea that I would meet
+            someone who would change the way I look at life itself.
+          </p>
+
+          <p>
+            And today, I can say with all my heart that those five years have been some of the most beautiful years
+            of my life. And you will always be a very special part of that story.
+          </p>
+
+          <p>
+            I love you, Kratika. Not just for what you have done for me, but for the person you are. ❤️
+          </p>
+
+          <p>
+            Never stop being that fearless, crazy, full-of-life woman who laughs that contagious laugh and makes
+            the world around her a little more beautiful.
+          </p>
+
+          <p>
+            And whenever you feel that you haven't done enough in life, I hope you remember this: somewhere in this
+            world, there is a person whose life became happier, brighter, and more beautiful because she met YOU.
+          </p>
+
+          <p>That person is me.</p>
+
+          <p>
+            You will always have a special place in my heart, Kratika. And no matter where life takes us, a part of
+            my happiest memories will always begin with you. ❤️
+          </p>
+
+          <p class="fb-sign">With so much love,<br>Your girl…always..Swati ❤️</p>
+
+          <button class="read-more" type="button" aria-expanded="true">Show less</button>
+        </div>
+
+        <!-- CHANGE THIS NAME / PLACE -->
+        <div class="by">— Name, Place</div>
+      </article>
+
+      <!-- ============================================================
+           TESTIMONIAL 1 — BHAVNA
+           (To add "Read more": copy the short/full structure above)
+           ============================================================ -->
+      <article class="feedback-card">
+        <h2 class="quote-heading">I genuinely felt heard and understood.</h2>
 
         <p>
           Kratika doesn’t simply tell you what you should feel or do.
@@ -251,7 +524,7 @@
         <div class="by">— Bhavna, Germany</div>
       </article>
 
-      <!-- TESTIMONIAL 2 -->
+      <!-- TESTIMONIAL 2 — ROMEY -->
       <article class="feedback-card">
         <h2 class="quote-heading">
           The real clarity I got was after reading The Dopamine Monster.
@@ -259,18 +532,17 @@
 
         <p>
           The story was very well crafted, and it made me want to know
-          more. ALIVE is a very good initiative. It really changed my
-          mind and made me look at my life from another perspective.
+          more. ALIVE is a very good initiative. It really
+          changed my mind and made me look at my life
+          from another perspective.
         </p>
 
         <div class="by">— Romey Raj, Jharkhand</div>
       </article>
 
-      <!-- TESTIMONIAL 3 -->
+      <!-- TESTIMONIAL 3 — VIETNAM -->
       <article class="feedback-card">
-        <h2 class="quote-heading">
-          I genuinely loved our session 🤍
-        </h2>
+        <h2 class="quote-heading">I genuinely loved our session 🤍</h2>
 
         <p>
           You were so warm, comforting and easy to talk to.
@@ -295,7 +567,7 @@
     <p>Every journey begins with an honest conversation.</p>
   </section>
 
-  <!-- SAME MOBILE MENU BEHAVIOUR AS INDEX -->
+  <!-- MOBILE MENU + READ MORE -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
@@ -303,10 +575,7 @@
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute(
-        'aria-label',
-        isOpen ? 'Close menu' : 'Open menu'
-      );
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     });
 
     document.querySelectorAll('.nav a').forEach(link => {
@@ -314,6 +583,20 @@
         nav.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    // Read more / Show less
+    document.querySelectorAll('.feedback-card .read-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.feedback-card');
+        const open = card.classList.toggle('is-open');
+        card.querySelectorAll('.read-more').forEach(b =>
+          b.setAttribute('aria-expanded', String(open))
+        );
+        if (!open) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   </script>
