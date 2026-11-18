@@ -110,8 +110,8 @@
             <label class="choice"><input type="checkbox" name="current-state" value="other"> Something else</label>
           </div>
         </fieldset>
-        <div class="field"><label for="feel">What feels different from how you’d like your life to feel?</label><textarea id="feel" name="feel"></textarea></div>
         <div class="field"><label for="dream">If things changed, what would you love your life to feel like?</label><textarea id="dream" name="dream" placeholder="You can keep this simple — a few words are enough."></textarea></div>
+        <div class="field"><label for="best-time">What is the best time to have the conversation?</label><input id="best-time" name="best-time" type="text" placeholder="Days, times and your time zone"></div>
         <div class="field"><label for="anything">Is there anything you particularly want me to know before we speak?</label><textarea id="anything" name="anything"></textarea></div>
         <button class="submit" type="submit">Send &amp; Begin</button>
         <p class="note">Your answers are simply a starting point for our conversation.</p>
@@ -136,6 +136,60 @@
         });
       });
     }
+  </script>
+
+  <!-- Saves a copy of each enquiry to the Google Sheet, then lets the form continue exactly as before
+       (email via FormSubmit, then the thank-you page). If the sheet step fails, the form still goes through. -->
+  <script>
+    (function () {
+      const form = document.querySelector('.begin-form');
+      if (!form) return;
+      const API_URL = 'https://script.google.com/macros/s/AKfycbz_VuBOuQk6du3wb2dRyIf020MWLgUyicE4ncH0jzQugnqmZFqP4bAPyJYrPLz7Ax8j/exec';
+      let busy = false;
+
+      form.addEventListener('submit', function (event) {
+        if (form.dataset.logged === '1') return;   // second pass: let the normal submit go through
+        event.preventDefault();
+        if (busy) return;
+        busy = true;
+
+        const button = form.querySelector('.submit');
+        button.disabled = true;
+        button.textContent = 'Sending…';
+
+        const val = function (name) { const el = form.elements[name]; return el ? el.value.trim() : ''; };
+        const states = Array.from(form.querySelectorAll('input[name="current-state"]:checked'))
+          .map(function (c) { return c.value; }).join(', ');
+
+        const payload = {
+          action: 'lets_talk',
+          name: val('name'),
+          email: val('email'),
+          phone: val('phone'),
+          work: val('work'),
+          whyNow: val('why-now'),
+          currentState: states,
+          dream: val('dream'),
+          bestTime: val('best-time'),
+          anything: val('anything'),
+          website: val('bot-field')
+        };
+
+        const send = fetch(API_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(function () {});
+        const wait = new Promise(function (resolve) { setTimeout(resolve, 4000); });
+
+        Promise.race([send, wait]).then(function () {
+          form.dataset.logged = '1';
+          form.submit();
+        });
+      });
+    })();
   </script>
 
   <footer>
