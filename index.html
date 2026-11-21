@@ -121,7 +121,7 @@
       </div>
     </section>
 
-    <section class="words section" id="words">
+ <!--&   <section class="words section" id="words">
       <div class="section-label">WORDS</div>
       <div>
         <p class="quote">“Your life does not have to look perfect to feel alive.”</p>
@@ -129,6 +129,59 @@
       </div>
     </section>
 
+       -->
+
+<section class="words section" id="words">
+  <div class="section-label">WORDS</div>
+  <div class="quote-carousel">
+    <div class="quote-track" id="quoteTrack">
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“Without him, I wouldn’t be the cricketer I turned out to be. He taught me not just how to play, but how to live life with discipline and focus.”</blockquote>
+        <figcaption>Sachin Tendulkar <span>on his coach, Ramakant Achrekar</span></figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“The true teacher is he who can immediately come down to the level of the student, and transfer his soul to the student’s soul and see through the student’s eyes.”</blockquote>
+        <figcaption>Swami Vivekananda</figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“The role of a mentor is to create more leaders, not more followers.”</blockquote>
+        <figcaption>N.R. Narayana Murthy <span>Co-founder of Infosys</span></figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“A good teacher can ignite the imagination, instill a love of learning, and show you the path you didn’t know existed.”</blockquote>
+        <figcaption>A.P.J. Abdul Kalam</figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“You need people around you who will give you honest feedback and keep you grounded when you are trying to reach the next level.”</blockquote>
+        <figcaption>Virat Kohli <span>on mentorship and guidance</span></figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“No matter how capable you are, having someone who challenges your thinking is what keeps you growing.”</blockquote>
+        <figcaption>Azim Premji <span>Founder of Wipro</span></figcaption>
+      </figure>
+
+      <figure class="quote-slide">
+        <blockquote class="quote">“Talking to someone and getting the right guidance doesn’t make you weak—it gives you the clarity to move forward.”</blockquote>
+        <figcaption>Deepika Padukone <span>on mental wellness and seeking support</span></figcaption>
+      </figure>
+
+    </div>
+
+    <div class="quote-controls">
+      <button class="quote-arrow" id="quotePrev" aria-label="Previous quote">←</button>
+      <div class="quote-dots" id="quoteDots"></div>
+      <button class="quote-arrow" id="quoteNext" aria-label="Next quote">→</button>
+    </div>
+  </div>
+</section>
+
+       
     <section class="begin" id="begin">
       <p class="eyebrow">THIS COULD BE YOUR BEGINNING.</p>
       <h2>Ready to feel more alive?</h2>
@@ -146,6 +199,35 @@
   </footer>
 
   <script>
+
+
+     
+       
+const qTrack = document.getElementById('quoteTrack');
+const qSlides = qTrack.querySelectorAll('.quote-slide');
+const qDots = document.getElementById('quoteDots');
+
+qSlides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', 'Go to quote ' + (i + 1));
+  d.addEventListener('click', () => qTrack.scrollTo({ left: qTrack.clientWidth * i }));
+  qDots.appendChild(d);
+});
+
+function updateDots() {
+  const i = Math.round(qTrack.scrollLeft / qTrack.clientWidth);
+  qDots.querySelectorAll('button').forEach((d, n) => d.classList.toggle('active', n === i));
+}
+qTrack.addEventListener('scroll', updateDots, { passive: true });
+updateDots();
+
+document.getElementById('quotePrev').addEventListener('click', () =>
+  qTrack.scrollBy({ left: -qTrack.clientWidth }));
+document.getElementById('quoteNext').addEventListener('click', () =>
+  qTrack.scrollBy({ left: qTrack.clientWidth }));
+
+     
+          
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
 
